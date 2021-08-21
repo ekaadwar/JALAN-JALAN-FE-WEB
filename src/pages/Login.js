@@ -25,11 +25,11 @@ export default function Login() {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Control type="password" placeholder="Password" />
                 </Form.Group>
-                <AuthButton isPrimary />
+                <AuthButton value="Sign In" isPrimary />
               </FormAuth>
               <PAuth>Did you forgot your password?</PAuth>
               <PAuth>
-                <Link to="/forgot">Tap here for reset</Link>
+                <Link to="/forgotPass">Tap here for reset</Link>
               </PAuth>
               <Hr />
               <PAuth>don't have an account yet?</PAuth>

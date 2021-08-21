@@ -21,9 +21,9 @@ export const FormAuth = styled.form`
 
 export const PAuth = styled.p`
   text-align: center;
-  margin: 0;
+  margin-bottom: 5px;
   padding: 0;
-  font-size: 12px;
+  font-size: 14px;
 `;
 
 export const Hr = styled.hr`

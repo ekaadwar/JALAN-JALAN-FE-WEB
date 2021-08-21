@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Header = styled.div`
-  //   background-color: red;
   height: 50px;
   display: flex;
   justify-content: flex-start;
@@ -11,13 +11,18 @@ const Header = styled.div`
   font-weight: bold;
   font-size: 20px;
   color: #0ddb89;
-  //   font-family: "Poppins", sans-serif;
 `;
+
+const LinkStyle = {
+  textDecoration: "none",
+};
 
 export default function AuthHeader() {
   return (
     <Container>
-      <Header>JalanJalan</Header>
+      <Link style={LinkStyle} to="/login">
+        <Header>JalanJalan</Header>
+      </Link>
     </Container>
   );
 }

@@ -1,5 +1,6 @@
 import React from "react";
-import { Container, Form, Button } from "react-bootstrap";
+import { Container, Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 import AuthHeader from "../components/AuthHeader";
 import AuthButton from "../components/AuthButton";
@@ -17,11 +18,12 @@ export default function Login() {
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Control type="email" placeholder="Username" />
             </Form.Group>
-            {process.env.PRIMARY_COLOR}
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Control type="password" placeholder="Password" />
             </Form.Group>
             <AuthButton />
+            <p>don't have an account yet?</p>
+            <Link to="/register">Click here to Sign Up</Link>
           </Form>
         </Container>
       </section>

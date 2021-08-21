@@ -1,32 +1,45 @@
 import React from "react";
-import { Container, Form } from "react-bootstrap";
+import { Container, Form, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { ContentWrapper, MaxWidth, FormAuth, PAuth, Hr } from "../components/AuthStyles";
 
 import AuthHeader from "../components/AuthHeader";
 import AuthButton from "../components/AuthButton";
+import AuthTitle from "../components/AuthTitle";
 
 // import { FloatingLabel } from "react-bootstrap";
 
 export default function Login() {
   return (
-    <>
-      <AuthHeader />
-      <section>
-        <Container>
-          <h1>Login</h1>
-          <Form>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Control type="email" placeholder="Username" />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Control type="password" placeholder="Password" />
-            </Form.Group>
-            <AuthButton />
-            <p>don't have an account yet?</p>
-            <Link to="/register">Click here to Sign Up</Link>
-          </Form>
-        </Container>
-      </section>
-    </>
+    <Container>
+      <Row>
+        <Col>
+          <AuthHeader />
+          <ContentWrapper>
+            <MaxWidth>
+              <AuthTitle title="Login" />
+              <FormAuth>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Control type="email" placeholder="Username" />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Control type="password" placeholder="Password" />
+                </Form.Group>
+                <AuthButton isPrimary />
+              </FormAuth>
+              <PAuth>Did you forgot your password?</PAuth>
+              <PAuth>
+                <Link to="/forgot">Tap here for reset</Link>
+              </PAuth>
+              <Hr />
+              <PAuth>don't have an account yet?</PAuth>
+              <PAuth>
+                <Link to="/register">Click here to Sign Up</Link>
+              </PAuth>
+            </MaxWidth>
+          </ContentWrapper>
+        </Col>
+      </Row>
+    </Container>
   );
 }

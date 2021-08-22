@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { LinkStyle, NavHeader } from "../components/GeneralStyles";
 import GeneralButton from "./GeneralButton";
 
-import styled from "styled-components";
+// import styled from "styled-components";
 
 // const NavWrapper = styled.div`
 //   display: flex;
@@ -18,14 +18,14 @@ import styled from "styled-components";
 
 export default function MainNavbar() {
   return (
-    <Navbar bg="primary" expand="lg">
+    <Navbar bg="white" expand="lg">
       <Container>
         <Link style={LinkStyle} to="/explore">
           <Navbar.Brand style={NavHeader}>JalanJalan</Navbar.Brand>
         </Link>
 
         <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
+        <Navbar.Collapse id="navbarScroll" className="d-lg-flex  flex-lg-row justify-content-lg-between pt-2 pt-lg-0 pl-5">
           <Form className="d-flex">
             <FormControl type="search" placeholder="Where you want to go?" className="mr-2" aria-label="Search" />
             <Button className="d-none" variant="outline-success">
@@ -33,7 +33,7 @@ export default function MainNavbar() {
             </Button>
           </Form>
           <Nav className="mr-auto my-2 my-lg-0" style={{ maxHeight: "100px" }} navbarScroll>
-            <Link style={LinkStyle} to="/explore">
+            <Link style={LinkStyle} to="/explore" className="mr-0">
               <Nav.Link>Find Ticket</Nav.Link>
             </Link>
 

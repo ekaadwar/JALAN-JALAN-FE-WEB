@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 // const { PRIMARY_COLOR: COLOR } = process.env;
 
-export default function AuthButton({ value = "Submit", isPrimary }) {
+export default function Button({ value = "Submit", isPrimary }) {
   const Button = styled.button`
     border-width: 0;
     height: 40px;

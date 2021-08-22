@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
-import AuthButton from "../components/AuthButton";
+import GeneralButton from "../components/GeneralButton";
 import AuthHeader from "../components/AuthHeader";
 import { ContentWrapper, FormAuth, MaxWidth, PAuth } from "../components/AuthStyles";
 import AuthTitle from "../components/AuthTitle";
@@ -18,7 +18,7 @@ export default function ForgotPass() {
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Control type="email" placeholder="Username" />
                 </Form.Group>
-                <AuthButton value="Send" isPrimary />
+                <GeneralButton value="Send" isPrimary />
               </FormAuth>
               <PAuth>You’ll get message soon on your email</PAuth>
             </MaxWidth>

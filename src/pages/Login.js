@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { ContentWrapper, MaxWidth, FormAuth, PAuth, Hr } from "../components/AuthStyles";
 
 import AuthHeader from "../components/AuthHeader";
-import AuthButton from "../components/AuthButton";
+import GeneralButton from "../components/GeneralButton";
 import AuthTitle from "../components/AuthTitle";
 
 // import { FloatingLabel } from "react-bootstrap";
@@ -25,8 +25,10 @@ export default function Login() {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Control type="password" placeholder="Password" />
                 </Form.Group>
-                <AuthButton value="Sign In" isPrimary />
               </FormAuth>
+              <Link to="/">
+                <GeneralButton value="Sign In" isPrimary />
+              </Link>
               <PAuth>Did you forgot your password?</PAuth>
               <PAuth>
                 <Link to="/forgotPass">Tap here for reset</Link>

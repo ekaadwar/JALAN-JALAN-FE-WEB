@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Container, Form, Row, Col } from "react-bootstrap";
 import AuthHeader from "../components/AuthHeader";
 import AuthTitle from "../components/AuthTitle";
-import AuthButton from "../components/AuthButton";
+import GeneralButton from "../components/GeneralButton";
 import { ContentWrapper, MaxWidth, FormAuth, PAuth, Hr } from "../components/AuthStyles";
 
 export default function Register() {
@@ -30,12 +30,12 @@ export default function Register() {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Control type="password" placeholder="Password" />
                 </Form.Group>
-                <AuthButton value="Sign Up" isPrimary />
+                <GeneralButton value="Sign Up" isPrimary />
               </FormAuth>
               <Hr />
               <PAuth>Already have an Account?</PAuth>
               <Link to="/login">
-                <AuthButton value="Sign In" />
+                <GeneralButton value="Sign In" />
               </Link>
             </MaxWidth>
           </ContentWrapper>

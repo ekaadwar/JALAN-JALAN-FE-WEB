@@ -7,6 +7,7 @@ import ForgotPass from "./pages/ForgotPass";
 
 // import Home from "./pages/Home";
 import Explore from "./pages/Explore";
+import SearchResult from "./pages/SearchResult";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/register" component={Register} />
         <Route path="/forgotPass" component={ForgotPass} />
         {/* <Route path="/explore" component={Explore} /> */}
+        <Route path="/searchResult" component={SearchResult} />
       </Switch>
     </Router>
   );

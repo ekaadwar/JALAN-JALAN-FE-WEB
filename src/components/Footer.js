@@ -7,19 +7,15 @@ import { LinkStyle, NavHeader } from "./GeneralStyles";
 import { FiFacebook, FiTwitter, FiInstagram, FiYoutube } from "react-icons/fi";
 import { BiCopyright, BiMap } from "react-icons/bi";
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
 const headSection = {
   fontWeight: "bold",
   fontSize: 16,
+  marginBottom: 5,
 };
 
 export default function Footer() {
   return (
-    <Container style={{ fontSize: 14 }}>
+    <Container style={{ fontSize: 14, marginTop: 50 }}>
       <Row>
         <Col className="d-flex flex-column flex-md-row justify-content-sm-between">
           <ListGroup className="mb-3" as="ul">

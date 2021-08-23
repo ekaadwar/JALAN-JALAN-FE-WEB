@@ -18,9 +18,9 @@ import GeneralButton from "./GeneralButton";
 
 export default function MainNavbar() {
   return (
-    <Navbar bg="white" expand="lg">
+    <Navbar bg="white" expand="lg" className="position-fixed fixed-top">
       <Container>
-        <Link style={LinkStyle} to="/explore">
+        <Link style={LinkStyle} to="/">
           <Navbar.Brand style={NavHeader}>JalanJalan</Navbar.Brand>
         </Link>
 
@@ -32,14 +32,17 @@ export default function MainNavbar() {
               Search
             </Button>
           </Form>
-          <Nav className="mr-auto my-2 my-lg-0" style={{ maxHeight: "100px" }} navbarScroll>
-            <Link style={LinkStyle} to="/explore" className="mr-0">
-              <Nav.Link>Find Ticket</Nav.Link>
-            </Link>
-
-            <Link style={LinkStyle} to="/explore">
-              <Nav.Link>My Booking</Nav.Link>
-            </Link>
+          <Nav className="my-2 my-lg-0" style={{ maxHeight: "100px" }} navbarScroll>
+            <Nav.Link style={{ marginRigth: 50 }}>
+              <Link style={LinkStyle} to="/searchResult">
+                Find Ticket
+              </Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link style={LinkStyle} to="#">
+                My Booking
+              </Link>
+            </Nav.Link>
           </Nav>
           <Link to="/login">
             <GeneralButton isPrimary value="Sign Up" />

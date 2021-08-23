@@ -1,11 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Container, ListGroup, Row, Col, Button } from "react-bootstrap";
-import styled from "styled-components";
-import { LinkStyle, NavHeader } from "./GeneralStyles";
+import { NavHeader } from "./GeneralStyles";
 
 import { FiFacebook, FiTwitter, FiInstagram, FiYoutube } from "react-icons/fi";
-import { BiCopyright, BiMap } from "react-icons/bi";
+import { BiMap } from "react-icons/bi";
 
 const headSection = {
   fontWeight: "bold",
@@ -23,16 +21,24 @@ export default function Footer() {
               JalanJalan
             </ListGroup.Item>
             <ListGroup.Item className="border-0 p-0" as="li">
-              Find your Flight and explore the world with us. We will take care of the rest
+              Find your Flight and explore the world with us. We will take care
+              of the rest
             </ListGroup.Item>
           </ListGroup>
 
           <ListGroup className="mb-3" as="ul">
-            <ListGroup.Item className="border-0 p-0" as="li" style={headSection}>
+            <ListGroup.Item
+              className="border-0 p-0"
+              as="li"
+              style={headSection}
+            >
               Features
             </ListGroup.Item>
             <ListGroup.Item className="border-0 p-0" as="li">
-              <ListGroup as="ul" className="d-flex flex-row flex-md-column justify-content-between">
+              <ListGroup
+                as="ul"
+                className="d-flex flex-row flex-md-column justify-content-between"
+              >
                 <ListGroup.Item className="border-0 p-0" as="li">
                   Find Ticket
                 </ListGroup.Item>
@@ -50,10 +56,17 @@ export default function Footer() {
           </ListGroup>
 
           <ListGroup className="mb-3" as="ul">
-            <ListGroup.Item className="border-0 p-0" as="li" style={headSection}>
+            <ListGroup.Item
+              className="border-0 p-0"
+              as="li"
+              style={headSection}
+            >
               Download JalanJalan App
             </ListGroup.Item>
-            <ListGroup.Item className="d-flex flex-md-column justify-content-center border-0 p-0" as="li">
+            <ListGroup.Item
+              className="d-flex flex-md-column justify-content-center border-0 p-0"
+              as="li"
+            >
               <Button variant="dark" className="m-2">
                 App Store
               </Button>
@@ -64,14 +77,37 @@ export default function Footer() {
           </ListGroup>
 
           <ListGroup className="mb-3" as="ul">
-            <ListGroup.Item className="border-0 p-0" as="li" style={headSection}>
+            <ListGroup.Item
+              className="border-0 p-0"
+              as="li"
+              style={headSection}
+            >
               Follow Us
             </ListGroup.Item>
-            <ListGroup.Item className="d-flex justify-content-start border-0 p-0" as="li">
-              <FiFacebook color="#595959" size={20} style={{ marginRight: 10 }} />
-              <FiTwitter color="#595959" size={20} style={{ marginRight: 10 }} />
-              <FiInstagram color="#595959" size={20} style={{ marginRight: 10 }} />
-              <FiYoutube color="#595959" size={20} style={{ marginRight: 10 }} />
+            <ListGroup.Item
+              className="d-flex justify-content-start border-0 p-0"
+              as="li"
+            >
+              <FiFacebook
+                color="#595959"
+                size={20}
+                style={{ marginRight: 10 }}
+              />
+              <FiTwitter
+                color="#595959"
+                size={20}
+                style={{ marginRight: 10 }}
+              />
+              <FiInstagram
+                color="#595959"
+                size={20}
+                style={{ marginRight: 10 }}
+              />
+              <FiYoutube
+                color="#595959"
+                size={20}
+                style={{ marginRight: 10 }}
+              />
             </ListGroup.Item>
           </ListGroup>
         </Col>

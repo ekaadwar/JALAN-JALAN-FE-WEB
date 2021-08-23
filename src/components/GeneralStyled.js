@@ -1,13 +1,16 @@
 import styled from "styled-components";
 
 export const Section = styled.div`
-  background-color: yellow;
-`;
-
-export const SectionHori = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+`;
+
+export const SectionHori = styled(Section)`
+  justify-content: space-between;
+`;
+
+export const SectionJustify = styled(Section)`
   justify-content: space-between;
 `;
 
@@ -30,7 +33,7 @@ export const TextLabel = styled(Text)`
 `;
 
 export const TextCity = styled(Text)`
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
 `;
 

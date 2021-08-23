@@ -8,6 +8,7 @@ import ForgotPass from "./pages/ForgotPass";
 // import Home from "./pages/Home";
 import Explore from "./pages/Explore";
 import SearchResult from "./pages/SearchResult";
+import FlightDetail from "./pages/FlightDetail";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/forgotPass" component={ForgotPass} />
         {/* <Route path="/explore" component={Explore} /> */}
         <Route path="/searchResult" component={SearchResult} />
+        <Route path="/flightDetail" component={FlightDetail} />
       </Switch>
     </Router>
   );

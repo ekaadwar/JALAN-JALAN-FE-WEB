@@ -10,6 +10,7 @@ export default function Button({ value = "Submit", isPrimary }) {
     border-radius: 5px;
     width: 100%;
     font-weight: bold;
+    padding: 0 20px;
   `;
 
   const ButtonPrimary = styled(Button)`
@@ -25,5 +26,13 @@ export default function Button({ value = "Submit", isPrimary }) {
     // box-shadow: 0 5px 5px rgba(13, 219, 137, 0.5);
   `;
 
-  return <div>{isPrimary ? <ButtonPrimary>{value}</ButtonPrimary> : <ButtonSecondary>{value}</ButtonSecondary>}</div>;
+  return (
+    <div>
+      {isPrimary ? (
+        <ButtonPrimary>{value}</ButtonPrimary>
+      ) : (
+        <ButtonSecondary>{value}</ButtonSecondary>
+      )}
+    </div>
+  );
 }

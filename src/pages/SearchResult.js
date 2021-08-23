@@ -66,11 +66,11 @@ export default function SearchResult() {
 
       <SectionBody>
         <Container>
-          <Row className="d-flex flex-column">
-            <Col>
+          <Row className="d-flex flex-column flex-md-row">
+            <Col md={3}>
               <CardFilter />
             </Col>
-            <Col>
+            <Col md={9}>
               <CardAirList />
             </Col>
           </Row>

@@ -25,7 +25,7 @@ export default function CardFilter() {
         </Col>
       </Row>
       <CardCst>
-        <Row className="d-flex flex-column">
+        <Row className="d-flex flex-column flex-sm-row flex-sm-column">
           <Col className="py-2 border-bottom">
             <SectionHori>
               <TextLabel>Transit</TextLabel>
@@ -63,7 +63,7 @@ export default function CardFilter() {
             ))}
           </Col>
         </Row>
-        <Row className="d-flex flex-column">
+        <Row className="d-flex flex-column d-flex flex-column flex-sm-row flex-sm-column">
           <Col className="py-2 border-bottom">
             <SectionHori>
               <TextLabel>Departure Time</TextLabel>
@@ -101,7 +101,7 @@ export default function CardFilter() {
             ))}
           </Col>
         </Row>
-        <Row className="d-flex flex-column">
+        <Row className="d-flex flex-column flex-sm-row flex-sm-column">
           <Col className="py-2 border-bottom">
             <SectionHori>
               <TextLabel>Airlines</TextLabel>
@@ -120,8 +120,6 @@ export default function CardFilter() {
               </SectionHori>
             ))}
           </Col>
-        </Row>
-        <Row className="d-flex flex-column">
           <Col className="py-2">
             <SectionHori>
               <TextLabel>Ticket Price</TextLabel>
@@ -129,6 +127,7 @@ export default function CardFilter() {
             </SectionHori>
           </Col>
         </Row>
+        {/* <Row className="d-flex flex-column"></Row> */}
       </CardCst>
     </>
   );

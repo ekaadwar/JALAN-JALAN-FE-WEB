@@ -6,17 +6,24 @@ import { SectionHori, TextLabel, TextCity } from "../components/GeneralStyled";
 
 import { BsArrowUpDown } from "react-icons/bs";
 
+import CardAirLine from "./CardAirLine";
+
 export default function CardAirList() {
   return (
     <Row className="my-3">
       <Col>
-        <SectionHori>
+        <SectionHori className="mb-3">
           <TextCity>Select Ticket</TextCity>
           <SectionHori>
             <TextLabel>Sort By</TextLabel>
             <BsArrowUpDown />
           </SectionHori>
         </SectionHori>
+        <CardAirLine />
+        <CardAirLine />
+        <CardAirLine />
+        <CardAirLine />
+        <CardAirLine />
       </Col>
     </Row>
   );

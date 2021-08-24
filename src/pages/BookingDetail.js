@@ -50,7 +50,15 @@ export default function BookingDetail() {
                 <TextCity>Booking Pass</TextCity>
                 <DotOption color="#0ddb89" />
               </SectionJustify>
-              <Row className="align-items-center">
+              <Row
+                className="align-items-center"
+                style={{
+                  borderWidth: 1,
+                  borderStyle: "solid",
+                  borderColor: "#ddd",
+                  borderRadius: 10,
+                }}
+              >
                 <Col xs={7} className="border-right-0 border-secondary">
                   <Row>
                     <ColBooking xs={4} className="">

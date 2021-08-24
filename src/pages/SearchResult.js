@@ -15,17 +15,9 @@ import {
   TextDetail,
   SectionBody,
 } from "../components/GeneralStyled";
+import { TopSectionStyles } from "../components/GeneralStyles";
 
-import { BsArrowLeftRight, BsDot, BsArrowUpDown } from "react-icons/bs";
-
-const TopSectionStyles = {
-  minHeight: 226,
-  paddingTop: 50,
-  backgroundColor: `#0ddb89`,
-  borderBottomRightRadius: 30,
-  borderBottomLeftRadius: 30,
-  display: "flex",
-};
+import { BsArrowLeftRight, BsDot } from "react-icons/bs";
 
 export default function SearchResult() {
   return (

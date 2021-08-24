@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+export const Button = styled.button`
+  border: 0;
+  padding: 0;
+  margin: 0;
+`;
+
 export const Section = styled.div`
   display: flex;
   flex-direction: row;
@@ -63,7 +69,14 @@ export const SectionBody = styled.section`
   padding: 40px 0;
 `;
 
+// the use of all CardGst components in this project will be replaced with Card components
 export const CardCst = styled.div`
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 10px 5px;
+`;
+
+export const Card = styled.div`
   background-color: #ffffff;
   border-radius: 10px;
   padding: 10px 5px;
@@ -72,4 +85,12 @@ export const CardCst = styled.div`
 export const Partition = styled.hr`
   margin: 0;
   padding: 0;
+`;
+
+export const TopSectionStyles = styled.section`
+  min-height: 226px;
+  padding-top: 60px;
+  background-color: #0ddb89;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
 `;

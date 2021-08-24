@@ -43,6 +43,7 @@ const TitleLight = styled.span`
 `;
 
 const CardCustom = styled(CardCst)`
+  width: 100%;
   max-width: 300px;
 `;
 
@@ -97,17 +98,15 @@ export default function Explore() {
                   </CardCustom>
                   <SectionJustify className="mb-3">
                     <Button
-                      style={{ width: "45%" }}
+                      style={{ width: "49%", fontSize: 12 }}
                       variant="success"
-                      size="sm"
                     >
                       <FaPlaneDeparture style={{ marginRight: 5 }} />
                       One way
                     </Button>
                     <Button
-                      style={{ width: "45%" }}
+                      style={{ width: "49%", fontSize: 12 }}
                       variant="secondary"
-                      size="sm"
                     >
                       <AiOutlineReload style={{ marginRight: 5 }} />
                       Round trip

@@ -9,6 +9,7 @@ import ForgotPass from "./pages/ForgotPass";
 import Explore from "./pages/Explore";
 import SearchResult from "./pages/SearchResult";
 import FlightDetail from "./pages/FlightDetail";
+import BookingDetail from "./pages/BookingDetail";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         {/* <Route path="/explore" component={Explore} /> */}
         <Route path="/searchResult" component={SearchResult} />
         <Route path="/flightDetail" component={FlightDetail} />
+        <Route path="/bookingDetail" component={BookingDetail} />
       </Switch>
     </Router>
   );

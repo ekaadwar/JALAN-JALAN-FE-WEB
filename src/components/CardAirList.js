@@ -1,9 +1,7 @@
 import React from "react";
 
 import { Row, Col } from "react-bootstrap";
-
 import { SectionHori, TextLabel, TextCity } from "../components/GeneralStyled";
-
 import { BsArrowUpDown } from "react-icons/bs";
 
 import CardAirLine from "./CardAirLine";

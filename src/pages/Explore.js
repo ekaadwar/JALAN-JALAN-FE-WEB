@@ -1,17 +1,136 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
+
 import Footer from "../components/Footer";
 import MainNavbar from "../components/MainNavbar";
+import {
+  TextDetail,
+  TextLabel,
+  TextCity,
+  CardCst,
+  Section,
+  SectionJustify,
+} from "../components/GeneralStyled";
+
+import styled from "styled-components";
+
+import { AiOutlineReload } from "react-icons/ai";
+import { BsArrowLeftRight } from "react-icons/bs";
+import { FaPlaneDeparture } from "react-icons/fa";
+import { FiChevronRight } from "react-icons/fi";
+
+const Jumbotron = styled.section`
+  padding-top: 100px;
+  min-height: 100vh;
+`;
+
+const Title = styled.h1`
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+`;
+
+const SubTitle = styled(TextDetail)`
+  color: #414141;
+`;
+
+const TitleDark = styled.span`
+  color: #414141;
+`;
+
+const TitleLight = styled.span`
+  color: #0ddb89;
+`;
+
+const CardCustom = styled(CardCst)`
+  width: 100%;
+  max-width: 300px;
+`;
+
+const InputSearch = styled(Button)`
+  background-colot: grey;
+`;
 
 export default function Explore() {
   return (
     <>
       <MainNavbar />
+      <Jumbotron>
+        <Container>
+          <Row>
+            <Col xs={12} md={6}>
+              <Section className="d-flex flex-column mb-3">
+                <div>
+                  <Title>
+                    <TitleDark>Find your</TitleDark>
+                    <TitleLight> Flight</TitleLight>
+                  </Title>
+                  <SubTitle>and explore the world with us</SubTitle>
+                </div>
+              </Section>
+            </Col>
+            <Col xs={12} md={6}>
+              <Section className="d-flex flex-column">
+                <CardCustom className="shadow p-3">
+                  <TextLabel>Hey,</TextLabel>
+                  <TextCity className="pb-2">Where you want to go?</TextCity>
+                  <TextLabel></TextLabel>
+                  <Section className="justify-content-between pb-3">
+                    <TextLabel>
+                      <TitleLight>Recently Searched</TitleLight>
+                    </TextLabel>
+                    <FiChevronRight color="#0ddb89" />
+                  </Section>
+                  <CardCustom className="shadow p-3 mb-3">
+                    <SectionJustify>
+                      <TextDetail>From</TextDetail>
+                      <TextDetail>To</TextDetail>
+                    </SectionJustify>
+                    <SectionJustify>
+                      <TextCity>Medan</TextCity>
+                      <BsArrowLeftRight color="#0ddb89" />
+                      <TextCity>Tokyo</TextCity>
+                    </SectionJustify>
+                    <SectionJustify>
+                      <TextDetail>Indonesia</TextDetail>
+                      <TextDetail>Japan</TextDetail>
+                    </SectionJustify>
+                  </CardCustom>
+                  <SectionJustify className="mb-3">
+                    <Button
+                      style={{ width: "49%", fontSize: 12 }}
+                      variant="success"
+                    >
+                      <FaPlaneDeparture style={{ marginRight: 5 }} />
+                      One way
+                    </Button>
+                    <Button
+                      style={{ width: "49%", fontSize: 12 }}
+                      variant="secondary"
+                    >
+                      <AiOutlineReload style={{ marginRight: 5 }} />
+                      Round trip
+                    </Button>
+                  </SectionJustify>
+                  <TextLabel className="mb-3">Departure</TextLabel>
+                  <InputSearch>Monday, 20 July 2021</InputSearch>
+                </CardCustom>
+              </Section>
+            </Col>
+          </Row>
+        </Container>
+      </Jumbotron>
+
       <Container>
-        <Row>
-          <Col>Ini Halaman Explore</Col>
-        </Row>
+        <SectionJustify>
+          <Section className="flex-column align-items-start">
+            <TextDetail>TRENDING</TextDetail>
+            <TextCity>Trending destinations</TextCity>
+          </Section>
+          <TextLabel>View All</TextLabel>
+        </SectionJustify>
       </Container>
+
       <Footer />
     </>
   );

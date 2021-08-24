@@ -15,17 +15,9 @@ import {
   TextDetail,
   SectionBody,
 } from "../components/GeneralStyled";
+import { TopSectionStyles } from "../components/GeneralStyles";
 
-import { BsArrowLeftRight, BsDot, BsArrowUpDown } from "react-icons/bs";
-
-const TopSectionStyles = {
-  minHeight: 226,
-  paddingTop: 50,
-  backgroundColor: `#0ddb89`,
-  borderBottomRightRadius: 30,
-  borderBottomLeftRadius: 30,
-  display: "flex",
-};
+import { BsArrowLeftRight, BsDot } from "react-icons/bs";
 
 export default function SearchResult() {
   return (
@@ -37,22 +29,32 @@ export default function SearchResult() {
             <Col className="d-flex align-items-center justify-content-center justify-content-md-between">
               <SectionData>
                 {/* <PictureWrapper className="d-none d-md-inline-block" /> */}
-                <SectionContent>
+                <SectionContent style={{ color: `#034026` }}>
                   <SectionHori>
-                    <TextLabel>From</TextLabel>
-                    <TextLabel>To</TextLabel>
+                    <TextLabel style={{ color: "#034026" }}>From</TextLabel>
+                    <TextLabel style={{ color: "#034026" }}>To</TextLabel>
                   </SectionHori>
                   <SectionHori>
-                    <TextCity className="">Medan (IDN)</TextCity>
+                    <TextCity style={{ color: "#034026" }}>
+                      Medan (IDN)
+                    </TextCity>
                     <BsArrowLeftRight />
-                    <TextCity>Medan Tokyo (JPN)</TextCity>
+                    <TextCity style={{ color: "#034026" }}>
+                      Medan Tokyo (JPN)
+                    </TextCity>
                   </SectionHori>
                   <SectionHori>
-                    <TextDetail>Monday, 20 July 20</TextDetail>
+                    <TextDetail style={{ color: "#034026" }}>
+                      Monday, 20 July 20
+                    </TextDetail>
                     <BsDot />
-                    <TextDetail>6 Passenger</TextDetail>
+                    <TextDetail style={{ color: "#034026" }}>
+                      6 Passenger
+                    </TextDetail>
                     <BsDot />
-                    <TextDetail>Economy</TextDetail>
+                    <TextDetail style={{ color: "#034026" }}>
+                      Economy
+                    </TextDetail>
                   </SectionHori>
                 </SectionContent>
               </SectionData>

@@ -9,6 +9,7 @@ import ForgotPass from "./pages/ForgotPass";
 import Explore from "./pages/Explore";
 import SearchResult from "./pages/SearchResult";
 import FlightDetail from "./pages/FlightDetail";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
@@ -18,8 +19,10 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <Route path="/forgotPass" component={ForgotPass} />
+        <PrivateRoute path="/searchResult" >
+        <SearchResult/>
+        </PrivateRoute>
         {/* <Route path="/explore" component={Explore} /> */}
-        <Route path="/searchResult" component={SearchResult} />
         <Route path="/flightDetail" component={FlightDetail} />
       </Switch>
     </Router>

@@ -6,6 +6,13 @@ export const Button = styled.button`
   margin: 0;
 `;
 
+export const CardDestination = styled.div`
+  width: 200px;
+  height: 250px;
+  border-radius: 10px;
+  display: inline-block;
+`;
+
 export const Section = styled.div`
   display: flex;
   flex-direction: row;
@@ -25,6 +32,12 @@ export const SectionData = styled(SectionHori)`
   width: 100%;
   max-width: 400px;
   //   background-color: coral;
+`;
+
+export const Squire = styled.div`
+  width: 100px;
+  height: 100px;
+  background-color: #ddd;
 `;
 
 export const Text = styled.p`

@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+.jumbotron {
+  background-image: url("../src/assets/img/general/bgJumbotron.jpg");
+}

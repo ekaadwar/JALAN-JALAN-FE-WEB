@@ -3,6 +3,7 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 
 import Footer from "../components/Footer";
 import MainNavbar from "../components/MainNavbar";
+import TopDestinationList from "../components/TopDestinationList";
 import {
   TextDetail,
   TextLabel,
@@ -10,18 +11,51 @@ import {
   CardCst,
   Section,
   SectionJustify,
+  CardDestination,
 } from "../components/GeneralStyled";
 
 import styled from "styled-components";
 
 import { AiOutlineReload } from "react-icons/ai";
 import { BsArrowLeftRight } from "react-icons/bs";
-import { FaPlaneDeparture } from "react-icons/fa";
-import { FiChevronRight } from "react-icons/fi";
+import {} from "react-icons/fa";
+import {
+  FaChevronRight,
+  FaChevronLeft,
+  FaPlaneDeparture,
+} from "react-icons/fa";
+
+// import garudaIndonesia from "../assets/img/airPlane/garudaIndonesia.png";
+import BgJumbotron from "../assets/img/general/bgJumbotron.jpg";
+import japanView from "../assets/img/general/japanView.png";
+import spainView from "../assets/img/general/spainView.png";
+
+const BgTopDestination = styled(CardCst)`
+  background-color: #0ddb89;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0;
+  height: 400px;
+  border-radius: 50px;
+`;
+
+const ButtonDestination = styled.div`
+  padding: 10px;
+  margin: 10px;
+  background-color: none;
+  border: 1px solid #fff;
+  border-radius: 10px;
+`;
 
 const Jumbotron = styled.section`
   padding-top: 100px;
   min-height: 100vh;
+  background-image: url(${BgJumbotron});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
 `;
 
 const Title = styled.h1`
@@ -47,6 +81,24 @@ const CardCustom = styled(CardCst)`
   max-width: 300px;
 `;
 
+const CardJapan = styled(CardDestination)`
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url(${japanView});
+`;
+
+const CardSpain = styled(CardDestination)`
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url(${spainView});
+`;
+
 const InputSearch = styled(Button)`
   background-colot: grey;
 `;
@@ -55,7 +107,7 @@ export default function Explore() {
   return (
     <>
       <MainNavbar />
-      <Jumbotron>
+      <Jumbotron className="jumbotron">
         <Container>
           <Row>
             <Col xs={12} md={6}>
@@ -79,7 +131,7 @@ export default function Explore() {
                     <TextLabel>
                       <TitleLight>Recently Searched</TitleLight>
                     </TextLabel>
-                    <FiChevronRight color="#0ddb89" />
+                    <FaChevronRight color="#0ddb89" />
                   </Section>
                   <CardCustom className="shadow p-3 mb-3">
                     <SectionJustify>
@@ -122,13 +174,47 @@ export default function Explore() {
       </Jumbotron>
 
       <Container>
-        <SectionJustify>
-          <Section className="flex-column align-items-start">
-            <TextDetail>TRENDING</TextDetail>
-            <TextCity>Trending destinations</TextCity>
+        <div style={{ marginTop: 100, marginBottom: 100 }}>
+          <SectionJustify>
+            <Section className="flex-column align-items-start">
+              <TextDetail className="mb-3">TRENDING</TextDetail>
+              <TextCity className="mb-3">Trending destinations</TextCity>
+            </Section>
+            <TextLabel style={{ color: "#0ddb89" }}>View All</TextLabel>
+          </SectionJustify>
+
+          <Row>
+            <Col>
+              <CardJapan />
+            </Col>
+            <Col>
+              <CardSpain />
+            </Col>
+            <Col>
+              <CardJapan />
+            </Col>
+            <Col>
+              <CardSpain />
+            </Col>
+            <Col>
+              <CardJapan />
+            </Col>
+          </Row>
+        </div>
+
+        <BgTopDestination>
+          <TextDetail>Top 10</TextDetail>
+          <TextCity>Top 10 Destinations</TextCity>
+          <TopDestinationList />
+          <Section>
+            <ButtonDestination>
+              <FaChevronLeft color="#FFF" />
+            </ButtonDestination>
+            <ButtonDestination>
+              <FaChevronRight color="#FFF" />
+            </ButtonDestination>
           </Section>
-          <TextLabel>View All</TextLabel>
-        </SectionJustify>
+        </BgTopDestination>
       </Container>
 
       <Footer />

@@ -6,6 +6,7 @@ import reduxConfig from './redux/store'
 import { PersistGate } from 'redux-persist/integration/react'
 
 // import './index.css';
+import "./App.css";
 // bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
 

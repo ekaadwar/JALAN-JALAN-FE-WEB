@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import { connect } from "react-redux";
 
+import { FiChevronDown } from "react-icons/fi";
 import MainNavbar from "../components/MainNavbar";
 import Footer from "../components/Footer";
 import CardFilter from "../components/CardFilter";

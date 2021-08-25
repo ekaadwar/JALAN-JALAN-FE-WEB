@@ -9,6 +9,7 @@ import { connect } from "react-redux";
 import { authRegister } from "../redux/actions/auth";
 import { useHistory } from 'react-router-dom'
 import Swal from "sweetalert2"
+import { toggleAuth } from "../redux/actions/auth";
 
 function Register(props) {
   let history = useHistory()
@@ -16,6 +17,13 @@ function Register(props) {
   const [email, setEmail] = useState("")
   const [password, setPasword] = useState("")
   const {sccMsg} = props.auth
+  const {token} = props.auth
+  useEffect(() => {
+    props.toggleAuth()
+    if(token !== null){
+      history.push('/searchResult')
+    }
+  },[])
 
   const onRegister = (e) =>{
     e.preventDefault()
@@ -83,6 +91,6 @@ function Register(props) {
 const mapStateToProps = state => ({
   auth: state.auth
 })
-const mapDispatchToProps = {authRegister}
+const mapDispatchToProps = {authRegister, toggleAuth}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Register)

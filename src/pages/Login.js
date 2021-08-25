@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Form, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { ContentWrapper, MaxWidth, FormAuth, PAuth, Hr } from "../components/AuthStyles";
@@ -10,6 +10,7 @@ import { authLogin } from "../redux/actions/auth";
 import { connect } from "react-redux";
 import { useHistory } from "react-router";
 import Swal from "sweetalert2"
+import { toggleAuth, openNavbar } from "../redux/actions/auth";
 
 // import { FloatingLabel } from "react-bootstrap";
 
@@ -18,6 +19,13 @@ function Login(props) {
   const [password, setPassword] = useState("")
   const {token} = props.auth
   let history = useHistory()
+
+  useEffect(() => {
+    props.toggleAuth()
+    if(token !== null){
+      history.push('/searchResult')
+    }
+  },[])
 
   const onLogin = (e) => {
     e.preventDefault()
@@ -80,5 +88,5 @@ function Login(props) {
 const mapStateToProps = state => ({
   auth: state.auth
 })
-const mapDispatchToProps = {authLogin}
+const mapDispatchToProps = {authLogin, toggleAuth, openNavbar}
 export default connect(mapStateToProps, mapDispatchToProps)(Login)

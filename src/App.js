@@ -9,11 +9,16 @@ import ForgotPass from "./pages/ForgotPass";
 import Explore from "./pages/Explore";
 import SearchResult from "./pages/SearchResult";
 import FlightDetail from "./pages/FlightDetail";
+import MyBooking from "./pages/MyBooking";
 import PrivateRoute from "./components/PrivateRoute";
+import MainNavbar from "./components/MainNavbar";
+import { connect } from "react-redux";
 
-function App() {
+function App(props) {
+  const {onAuth} = props.auth
   return (
     <Router>
+      {onAuth === false ? <MainNavbar /> : null}
       <Switch>
         <Route path="/" exact component={Explore} />
         <Route path="/login" component={Login} />
@@ -24,9 +29,12 @@ function App() {
         </PrivateRoute>
         {/* <Route path="/explore" component={Explore} /> */}
         <Route path="/flightDetail" component={FlightDetail} />
+        <Route path="/mybooking" component={MyBooking} />
       </Switch>
     </Router>
   );
 }
-
-export default App;
+const mapStateToProps = state => ({
+  auth: state.auth
+})
+export default connect(mapStateToProps)(App);

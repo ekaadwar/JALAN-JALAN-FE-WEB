@@ -2,6 +2,17 @@ import { http } from "../../helpers/http"
 
 const {REACT_APP_BACKEND_URL : URL} = process.env
 
+export const toggleAuth = () =>{
+  return{
+    type: 'AUTH_TOGGLE'
+  }
+}
+
+export const openNavbar = () =>{
+  return{
+    type: 'AUTH_TOGGLE_FALSE'
+  }
+}
 
 export const authLogin = (email, password) => {
   return async (dispatch) => {

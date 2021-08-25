@@ -7,6 +7,18 @@ const initialState = {
 
 const auth = (state= initialState, action) =>{
   switch(action.type){
+    case 'AUTH_TOGGLE' :{
+      return{
+        ...state,
+        onAuth : !state.onAuth
+      }
+    }
+    case 'AUTH_TOGGLE_FALSE' :{
+      return{
+        ...state,
+        onAuth : false
+      }
+    }
     case 'AUTH_LOGIN' :{
       return{
         ...state,

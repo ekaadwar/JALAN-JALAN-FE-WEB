@@ -12,6 +12,7 @@ import Explore from "../pages/Explore";
 import ForgotPass from "../pages/ForgotPass";
 import FlightDetail from "../pages/FlightDetail";
 import Login from "../pages/Login";
+import MyBooking from "../pages/MyBooking";
 import Register from "../pages/Register";
 import SearchResult from "../pages/SearchResult";
 
@@ -34,6 +35,7 @@ function Routes({ auth }) {
         {/* <Route path="/explore" component={Explore} /> */}
         <Route path="/flightDetail" component={FlightDetail} />
         <Route path="/bookingDetail" component={BookingDetail} />
+        <Route path="/myBooking" component={MyBooking} />
       </Switch>
       <Footer />
     </Router>

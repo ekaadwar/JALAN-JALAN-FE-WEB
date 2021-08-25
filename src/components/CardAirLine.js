@@ -52,9 +52,7 @@ function CardAirLine({ auth, product, getAllProduct }) {
                 <Col xs={12} sm={12} lg={3} className="d-flex flex-column mb-3">
                   <div className="align-self-center align-self-lg-start d-flex flex-row align-items-center justify-content-center">
                     <div>
-                      <TextCity>
-                        {v.destination.destination_country_code}
-                      </TextCity>
+                      <TextCity>{v.destination.base_country_code}</TextCity>
                       <TextDetail>{v.time_leave}</TextDetail>
                     </div>
                     <FaPlaneDeparture className="mx-5" />

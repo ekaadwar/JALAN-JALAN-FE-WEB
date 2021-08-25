@@ -9,6 +9,7 @@ import ForgotPass from "./pages/ForgotPass";
 import Explore from "./pages/Explore";
 import SearchResult from "./pages/SearchResult";
 import FlightDetail from "./pages/FlightDetail";
+import BookingDetail from "./pages/BookingDetail";
 import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
@@ -19,11 +20,12 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <Route path="/forgotPass" component={ForgotPass} />
-        <PrivateRoute path="/searchResult" >
-        <SearchResult/>
+        <PrivateRoute path="/searchResult">
+          <SearchResult />
         </PrivateRoute>
         {/* <Route path="/explore" component={Explore} /> */}
         <Route path="/flightDetail" component={FlightDetail} />
+        <Route path="/bookingDetail" component={BookingDetail} />
       </Switch>
     </Router>
   );

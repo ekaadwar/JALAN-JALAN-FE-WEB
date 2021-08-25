@@ -114,7 +114,6 @@ function Explore(props) {
   },[])
   return (
     <>
-      {/* <MainNavbar /> */}
       <Jumbotron className="jumbotron">
         <Container>
           <Row>
@@ -224,8 +223,6 @@ function Explore(props) {
           </Section>
         </BgTopDestination>
       </Container>
-
-      <Footer />
     </>
   );
 }

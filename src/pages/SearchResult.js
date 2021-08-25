@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 
 import { Row, Col, Container } from "react-bootstrap";
+import { connect } from "react-redux";
 
 import MainNavbar from "../components/MainNavbar";
 import Footer from "../components/Footer";
@@ -26,6 +27,8 @@ function SearchResult(props) {
   useEffect(() => {
     props.openNavbar()
   },[])
+
+
 
   return (
     <>
@@ -84,13 +87,13 @@ function SearchResult(props) {
           </Row>
         </Container>
       </SectionBody>
-
-      <Footer />
     </>
   );
 }
+
 const mapStateToProps = state => ({
   auth: state.auth
 })
 const mapDispatchToProps = {openNavbar}
 export default connect(mapStateToProps, mapDispatchToProps)(SearchResult)
+

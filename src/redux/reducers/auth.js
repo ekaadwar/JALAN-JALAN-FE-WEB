@@ -1,6 +1,7 @@
 const initialState = {
   onAuth: false,
   token: null,
+
   errMsg: '',
   sccMsg: ''
 }
@@ -58,3 +59,4 @@ const auth = (state= initialState, action) =>{
 }
 
 export default auth
+

@@ -1,9 +1,12 @@
-import React, {useState, useEffect} from "react";
+
+import React, { useState, useEffect } from "react";
+
 import { Link } from "react-router-dom";
 import { Container, Form, Row, Col } from "react-bootstrap";
 import AuthHeader from "../components/AuthHeader";
 import AuthTitle from "../components/AuthTitle";
 import GeneralButton from "../components/GeneralButton";
+
 import { ContentWrapper, MaxWidth, FormAuth, PAuth, Hr } from "../components/AuthStyles";
 import { connect } from "react-redux";
 import { authRegister } from "../redux/actions/auth";
@@ -51,8 +54,9 @@ function Register(props) {
     })
   }
 
+
   return (
-    <Container>
+    <Container style={{ paddingTop: 60 }}>
       {/* <Row>
         <Col sm={8}>1</Col>
         <Col sm={4}>2</Col>
@@ -60,19 +64,32 @@ function Register(props) {
 
       <Row>
         <Col>
-          <AuthHeader />
           <ContentWrapper>
             <MaxWidth>
               <AuthTitle title="Register" />
               <FormAuth onSubmit={onRegister}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Control type="name" placeholder="Full Name" onChange={e=>setName(e.target.value)}/>
+
+                  <Form.Control
+                    type="name"
+                    placeholder="Full Name"
+                    onChange={(e) => setName(e.target.value)}
+                  />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Control type="email" placeholder="Email" onChange={e=>setEmail(e.target.value)}/>
+                  <Form.Control
+                    type="email"
+                    placeholder="Email"
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                  <Form.Control type="password" placeholder="Password" onChange={e=>setPasword(e.target.value)}/>
+                  <Form.Control
+                    type="password"
+                    placeholder="Password"
+                    onChange={(e) => setPasword(e.target.value)}
+                  />
+
                 </Form.Group>
                 <GeneralButton value="Sign Up" isPrimary type="submit" />
               </FormAuth>
@@ -88,9 +105,11 @@ function Register(props) {
     </Container>
   );
 }
+
 const mapStateToProps = state => ({
   auth: state.auth
 })
 const mapDispatchToProps = {authRegister, toggleAuth}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Register)
+

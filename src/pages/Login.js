@@ -1,7 +1,15 @@
+
 import React, { useState, useEffect } from "react";
+
 import { Container, Form, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { ContentWrapper, MaxWidth, FormAuth, PAuth, Hr } from "../components/AuthStyles";
+import {
+  ContentWrapper,
+  MaxWidth,
+  FormAuth,
+  PAuth,
+  Hr,
+} from "../components/AuthStyles";
 
 import AuthHeader from "../components/AuthHeader";
 import GeneralButton from "../components/GeneralButton";
@@ -9,12 +17,15 @@ import AuthTitle from "../components/AuthTitle";
 import { authLogin } from "../redux/actions/auth";
 import { connect } from "react-redux";
 import { useHistory } from "react-router";
+
 import Swal from "sweetalert2"
 import { toggleAuth, openNavbar } from "../redux/actions/auth";
+
 
 // import { FloatingLabel } from "react-bootstrap";
 
 function Login(props) {
+
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const {token} = props.auth
@@ -52,22 +63,32 @@ function Login(props) {
       })
     })
   }
+
   return (
-    <Container>
+    <Container style={{ paddingTop: 60 }}>
       <Row>
         <Col>
-          <AuthHeader />
           <ContentWrapper>
             <MaxWidth>
               <AuthTitle title="Login" />
               <FormAuth onSubmit={onLogin}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Control type="email" placeholder="Username" onChange={e=>setEmail(e.target.value)}/>
+
+                  <Form.Control
+                    type="email"
+                    placeholder="Username"
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                  <Form.Control type="password" placeholder="Password" onChange={e=>setPassword(e.target.value)}/>
+                  <Form.Control
+                    type="password"
+                    placeholder="Password"
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
                 </Form.Group>
-                <GeneralButton value="Sign In" isPrimary type="submit"/>
+                <GeneralButton value="Sign In" isPrimary type="submit" />
+                  
               </FormAuth>
               <PAuth>Did you forgot your password?</PAuth>
               <PAuth>
@@ -85,8 +106,10 @@ function Login(props) {
     </Container>
   );
 }
+
 const mapStateToProps = state => ({
   auth: state.auth
 })
 const mapDispatchToProps = {authLogin, toggleAuth, openNavbar}
 export default connect(mapStateToProps, mapDispatchToProps)(Login)
+

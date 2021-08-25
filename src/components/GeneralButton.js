@@ -3,7 +3,9 @@ import styled from "styled-components";
 
 // const { PRIMARY_COLOR: COLOR } = process.env;
 
+
 export default function Button({ value = "Submit", isPrimary, type }) {
+
   const Button = styled.button`
     border-width: 0;
     height: 40px;
@@ -29,7 +31,9 @@ export default function Button({ value = "Submit", isPrimary, type }) {
   return (
     <div>
       {isPrimary ? (
+
         <ButtonPrimary type={type} >{value}</ButtonPrimary>
+
       ) : (
         <ButtonSecondary>{value}</ButtonSecondary>
       )}

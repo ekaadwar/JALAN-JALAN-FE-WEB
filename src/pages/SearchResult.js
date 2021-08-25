@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Row, Col, Container } from "react-bootstrap";
+import { connect } from "react-redux";
 
 import MainNavbar from "../components/MainNavbar";
 import Footer from "../components/Footer";
@@ -19,7 +20,7 @@ import { TopSectionStyles } from "../components/GeneralStyles";
 
 import { BsArrowLeftRight, BsDot } from "react-icons/bs";
 
-export default function SearchResult() {
+function SearchResult() {
   return (
     <>
       <div style={TopSectionStyles}>
@@ -80,3 +81,10 @@ export default function SearchResult() {
     </>
   );
 }
+
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+  product: state.product,
+});
+
+export default connect(mapStateToProps)(SearchResult);

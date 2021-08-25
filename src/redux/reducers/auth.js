@@ -1,54 +1,62 @@
 const initialState = {
   onAuth: false,
   token: null,
-  errMsg: "",
-  sccMsg: "",
-};
 
-const auth = (state = initialState, action) => {
-  switch (action.type) {
-    case "AUTH_LOGIN": {
-      return {
+  errMsg: '',
+  sccMsg: ''
+}
+
+const auth = (state= initialState, action) =>{
+  switch(action.type){
+    case 'AUTH_TOGGLE' :{
+      return{
         ...state,
-        token: action.payload,
-      };
+        onAuth : !state.onAuth
+      }
     }
-    case "AUTH_LOGIN_FAILED": {
-      return {
+    case 'AUTH_TOGGLE_FALSE' :{
+      return{
         ...state,
-        errMsg: action.payload,
-      };
+        onAuth : false
+      }
     }
-    case "AUTH_REGISTER": {
-      return {
+    case 'AUTH_LOGIN' :{
+      return{
         ...state,
-        sccMsg: action.payload,
-      };
+        token: action.payload
+      }
     }
-    case "AUTH_REGISTER_FAILED": {
-      return {
+    case 'AUTH_LOGIN_FAILED' :{
+      return{
         ...state,
-        errMsg: action.payload,
-      };
+        errMsg: action.payload
+      }
     }
-    case "AUTH_LOGOUT": {
-      return {
+    case 'AUTH_REGISTER' :{
+      return{
         ...state,
-        token: null,
-      };
+        sccMsg: action.payload
+      }
     }
-    case "AUTH_TOGGLE": {
-      return {
+    case 'AUTH_REGISTER_FAILED' :{
+      return{
         ...state,
-        onAuth: !state.onAuth,
-      };
+        errMsg: action.payload
+      }
+    }
+    case 'AUTH_LOGOUT' :{
+      return{
+        ...state,
+        token: null
+      }
     }
     default: {
-      return {
-        ...state,
-      };
+      return{
+        ...state
+      }
     }
   }
-};
+}
 
-export default auth;
+export default auth
+

@@ -11,7 +11,10 @@ import { Link } from "react-router-dom";
 import { LinkStyle, NavHeader } from "../components/GeneralStyles";
 import GeneralButton from "./GeneralButton";
 
-export default function MainNavbar() {
+import { connect } from "react-redux";
+import { authLogOut } from "../redux/actions/auth";
+
+function MainNavbar({ auth, authLogOut }) {
   return (
     <Navbar bg="white" expand="lg" className="position-fixed fixed-top">
       <Container>
@@ -51,11 +54,23 @@ export default function MainNavbar() {
               </Link>
             </Nav.Link>
           </Nav>
-          <Link to="/login">
-            <GeneralButton isPrimary value="Sign Up" />
-          </Link>
+          {auth.token !== null ? (
+            <Button onClick={authLogOut}>LogOut</Button>
+          ) : (
+            <Link to="/login">
+              <GeneralButton isPrimary value="Sign Up" />
+            </Link>
+          )}
         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
 }
+
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+
+const mapDispatchToProps = { authLogOut };
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainNavbar);

@@ -54,7 +54,6 @@ const TextFacilities = styled(TextLabel)`
 export default function FlightDetail() {
   return (
     <>
-      <MainNavbar />
       <TopSection>
         <Container
           className="pt-5 d-flex flex-row justify-content-between"
@@ -158,8 +157,6 @@ export default function FlightDetail() {
           </Col>
         </Row>
       </Container>
-
-      <Footer />
     </>
   );
 }

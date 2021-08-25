@@ -22,7 +22,6 @@ import { BsArrowLeftRight, BsDot } from "react-icons/bs";
 export default function SearchResult() {
   return (
     <>
-      <MainNavbar />
       <div style={TopSectionStyles}>
         <Container>
           <Row style={{ height: "100%" }}>
@@ -78,8 +77,6 @@ export default function SearchResult() {
           </Row>
         </Container>
       </SectionBody>
-
-      <Footer />
     </>
   );
 }

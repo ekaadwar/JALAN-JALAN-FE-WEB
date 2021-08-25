@@ -106,7 +106,6 @@ const InputSearch = styled(Button)`
 export default function Explore() {
   return (
     <>
-      <MainNavbar />
       <Jumbotron className="jumbotron">
         <Container>
           <Row>
@@ -216,8 +215,6 @@ export default function Explore() {
           </Section>
         </BgTopDestination>
       </Container>
-
-      <Footer />
     </>
   );
 }

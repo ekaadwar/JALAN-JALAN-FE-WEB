@@ -41,7 +41,6 @@ const SectionBooking = styled(Section)`
 export default function BookingDetail() {
   return (
     <>
-      <MainNavbar />
       <SectionBooking>
         <Container>
           <div className="d-flex flex-row justify-content-center">
@@ -107,8 +106,6 @@ export default function BookingDetail() {
           </div>
         </Container>
       </SectionBooking>
-
-      <Footer />
     </>
   );
 }

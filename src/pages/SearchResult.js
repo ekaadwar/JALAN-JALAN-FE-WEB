@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 
 import { Row, Col, Container } from "react-bootstrap";
 import { connect } from "react-redux";
@@ -19,16 +19,13 @@ import {
 import { TopSectionStyles } from "../components/GeneralStyles";
 
 import { BsArrowLeftRight, BsDot } from "react-icons/bs";
-import { connect } from "react-redux";
+
 import { openNavbar } from "../redux/actions/auth";
 
 function SearchResult(props) {
-
   useEffect(() => {
-    props.openNavbar()
-  },[])
-
-
+    props.openNavbar();
+  }, []);
 
   return (
     <>
@@ -91,9 +88,8 @@ function SearchResult(props) {
   );
 }
 
-const mapStateToProps = state => ({
-  auth: state.auth
-})
-const mapDispatchToProps = {openNavbar}
-export default connect(mapStateToProps, mapDispatchToProps)(SearchResult)
-
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+const mapDispatchToProps = { openNavbar };
+export default connect(mapStateToProps, mapDispatchToProps)(SearchResult);

@@ -4,6 +4,7 @@ export const Button = styled.button`
   border: 0;
   padding: 0;
   margin: 0;
+  backgound-color: #fff;
 `;
 
 export const CardDestination = styled.div`

@@ -4,6 +4,7 @@ import storage from "redux-persist/lib/storage";
 
 import auth from "./auth";
 import product from "./product";
+import chats from "./chats";
 
 const persistAuth = {
   storage,
@@ -16,7 +17,7 @@ const persistProduct = {
 const rootReducer = combineReducers({
   auth: persistReducer(persistAuth, auth),
   product: persistReducer(persistProduct, product),
+  chats,
 });
 
 export default rootReducer;
-

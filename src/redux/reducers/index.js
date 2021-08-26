@@ -4,6 +4,8 @@ import storage from "redux-persist/lib/storage";
 
 import auth from "./auth";
 import product from "./product";
+
+import chats from "./chats";
 import transaction from "./transaction"
 
 const persistAuth = {
@@ -17,8 +19,8 @@ const persistProduct = {
 const rootReducer = combineReducers({
   auth: persistReducer(persistAuth, auth),
   product: persistReducer(persistProduct, product),
+  chats,
   transaction,
 });
 
 export default rootReducer;
-

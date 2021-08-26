@@ -52,24 +52,10 @@ function Login(props) {
             timer: 1500,
           });
           setTimeout(() => {
-            history.push("/searchResult");
+            history.push("/");
           }, 1500);
         }
-      })
-      .catch(() => {
-        Swal.fire({
-          position: "top-end",
-          icon: "error",
-          title: "Login Failed",
-          showConfirmButton: false,
-
-          timer: 1500
-        })
-        setTimeout(() => {
-          history.push('/')
-        }, 1500);
-      }
-    }).catch(()=>{  
+      }).catch(()=>{  
       Swal.fire({
         position: 'top-end',
         icon: 'error',

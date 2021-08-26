@@ -13,6 +13,15 @@ export const CardDestination = styled.div`
   display: inline-block;
 `;
 
+export const Input = styled.input`
+  padding: 10px 10px;
+  margin: 0;
+  background-color: #fff;
+  border-width: 0;
+  width: 100%;
+  border-bottom: 2px solid #d2c2ff;
+`;
+
 export const Section = styled.div`
   display: flex;
   flex-direction: row;

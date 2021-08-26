@@ -76,7 +76,7 @@ export default class MyBooking extends Component {
               <Card className="shadow mb-3">
                 <TextLabel style={{ color: "#0ddb89" }}>MY BOOKING</TextLabel>
                 <SectionJustify>
-                  <TextCity>My Booking</TextCity>
+                  <TextCity style={{ fontSize: 24 }}>My Booking</TextCity>
                   <TextLabel style={{ color: "#0ddb89" }}>
                     Order History
                   </TextLabel>

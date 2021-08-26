@@ -15,6 +15,7 @@ import {
   TextDetail,
   TextCity,
   CardCst,
+  TextPrice,
 } from "../components/GeneralStyled";
 
 import garudaIndonesia from "../assets/img/airPlane/garudaIndonesia.png";
@@ -73,7 +74,8 @@ function CardAirLine(props) {
                 </div>
               </Col>
               <Col xs={12} sm={12} lg={3} className="d-flex flex-column mb-3">
-                <div className="align-self-center align-self-lg-end">
+                <div className="align-self-center align-self-lg-end d-flex align-items-center" style={{width: 190, justifyContent: "space-between"}}>
+                  <TextPrice>Rp.{props.price}</TextPrice>
                   <GeneralButton isPrimary value="Select" />
                 </div>
               </Col>

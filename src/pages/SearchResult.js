@@ -110,6 +110,7 @@ function SearchResult(props) {
                   transit={data.transit}
                   airlinePicture={data.airline.picture}
                   id={data.id}
+                  price={data.price}
                   />
                 )
               })}

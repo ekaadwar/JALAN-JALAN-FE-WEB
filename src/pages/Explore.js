@@ -34,6 +34,7 @@ import japanView from "../assets/img/general/japanView.png";
 import spainView from "../assets/img/general/spainView.png";
 import { connect } from "react-redux";
 import { openNavbar } from "../redux/actions/auth";
+import { getDetails } from "../redux/actions/product";
 
 const BgTopDestination = styled(CardCst)`
   background-color: #0ddb89;
@@ -123,6 +124,7 @@ function Explore(props) {
   useEffect(() => {
     props.openNavbar()
     props.searchProducts(search, page, filterAirline, filterPrice1, filterPrice2, filterDeparture1, filterArrive1, filterTransit1,)
+    props.getDetails(1)
   },[])
   return (
     <>
@@ -241,5 +243,5 @@ function Explore(props) {
 const mapStateToProps = state => ({
   auth: state.auth
 })
-const mapDispatchToProps = {openNavbar, searchProducts}
+const mapDispatchToProps = {openNavbar, searchProducts, getDetails}
 export default connect(mapStateToProps, mapDispatchToProps)(Explore)

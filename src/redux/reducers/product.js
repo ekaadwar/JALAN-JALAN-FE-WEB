@@ -4,6 +4,7 @@ import { airLineData } from "../../dummy/airLineData";
 const initialState = {
   search: {},
   pageInfo: {},
+  details: {},
 };
 
 const product = (state = initialState, action) => {
@@ -24,6 +25,12 @@ const product = (state = initialState, action) => {
         ],
         pageInfo: action.payload.pageInfo
       } 
+    }
+    case 'PRODUCTS_GET_DETAILS' : {
+      return {
+        ...state,
+        details: action.payload,
+      }
     }
     default:
       return {

@@ -4,7 +4,7 @@ import styled from "styled-components";
 // const { PRIMARY_COLOR: COLOR } = process.env;
 
 
-export default function Button({ value = "Submit", isPrimary, type }) {
+export default function Button({ value = "Submit", isPrimary, type, action }) {
 
   const Button = styled.button`
     border-width: 0;
@@ -32,7 +32,7 @@ export default function Button({ value = "Submit", isPrimary, type }) {
     <div>
       {isPrimary ? (
 
-        <ButtonPrimary type={type} >{value}</ButtonPrimary>
+        <ButtonPrimary type={type} onClick={action}>{value}</ButtonPrimary>
 
       ) : (
         <ButtonSecondary>{value}</ButtonSecondary>

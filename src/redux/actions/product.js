@@ -27,3 +27,14 @@ export const searchProducts = (search, page, filterAirline, filterPrice1, filter
     }
   }
 }
+
+
+export const getDetails = (id) => {
+  return async (dispatch) => {
+    const {data} = await http().get(`${URL}/products/${id}`)
+    dispatch({
+      type: 'PRODUCTS_GET_DETAILS',
+      payload: data.results,
+    })
+  }
+}

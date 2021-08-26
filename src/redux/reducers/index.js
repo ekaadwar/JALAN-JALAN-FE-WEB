@@ -4,6 +4,7 @@ import storage from "redux-persist/lib/storage";
 
 import auth from "./auth";
 import product from "./product";
+import transaction from "./transaction"
 
 const persistAuth = {
   storage,
@@ -16,6 +17,7 @@ const persistProduct = {
 const rootReducer = combineReducers({
   auth: persistReducer(persistAuth, auth),
   product: persistReducer(persistProduct, product),
+  transaction,
 });
 
 export default rootReducer;

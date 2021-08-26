@@ -107,6 +107,7 @@ function SearchResult(props) {
             </Col>
             <Col md={9}>
               {/* <CardAirList/> */}
+              {console.log(props.product)}
               {props.product.search.map((data) => {
                 if (
                   data.airline.picture !== null &&

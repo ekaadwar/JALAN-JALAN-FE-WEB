@@ -4,7 +4,7 @@ import storage from "redux-persist/lib/storage";
 
 import auth from "./auth";
 import product from "./product";
-import user from "./user";
+import user from "./profile";
 
 import chats from "./chats";
 import transaction from "./transaction";

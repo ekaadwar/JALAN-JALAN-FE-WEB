@@ -9,9 +9,13 @@ const persistAuth = {
   storage,
   key: "auth",
 };
+const persistProduct = {
+  storage,
+  key: "product",
+};
 const rootReducer = combineReducers({
   auth: persistReducer(persistAuth, auth),
-  product,
+  product: persistReducer(persistProduct, product),
 });
 
 export default rootReducer;

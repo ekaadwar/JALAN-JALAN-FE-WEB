@@ -1,9 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 
 import React, { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
 import { Container, Form, Row, Col } from "react-bootstrap";
-import AuthHeader from "../components/AuthHeader";
+// import AuthHeader from "../components/AuthHeader";
 import AuthTitle from "../components/AuthTitle";
 import GeneralButton from "../components/GeneralButton";
 

@@ -1,9 +1,8 @@
 const initialState = {
   onAuth: false,
   token: null,
-
   errMsg: '',
-  sccMsg: ''
+  sccMsg: '',
 }
 
 const auth = (state= initialState, action) =>{

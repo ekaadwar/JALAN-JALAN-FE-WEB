@@ -1,3 +1,7 @@
+
+/* eslint-disable react-hooks/exhaustive-deps */
+
+
 import React, { useState, useEffect } from "react";
 
 import { Container, Form, Row, Col } from "react-bootstrap";
@@ -58,10 +62,24 @@ function Login(props) {
           icon: "error",
           title: "Login Failed",
           showConfirmButton: false,
-          timer: 1500,
-        });
-      });
-  };
+
+          timer: 1500
+        })
+        setTimeout(() => {
+          history.push('/')
+        }, 1500);
+      }
+    }).catch(()=>{  
+      Swal.fire({
+        position: 'top-end',
+        icon: 'error',
+        title: 'Login Failed',
+        showConfirmButton: false,
+        timer: 1500
+      })
+    })
+  }
+
 
   return (
     <Container style={{ paddingTop: 60 }}>

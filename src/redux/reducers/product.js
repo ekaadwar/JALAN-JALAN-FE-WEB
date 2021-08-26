@@ -1,18 +1,30 @@
+/* eslint-disable no-unused-vars */
 import { airLineData } from "../../dummy/airLineData";
 
 const initialState = {
-  data: airLineData,
-  pagination: {},
+  search: {},
+  pageInfo: {},
 };
 
 const product = (state = initialState, action) => {
   switch (action.type) {
-    case "GET_ALL_PRODUCT":
+    case 'SEARCH_PRODUCT': {
       return {
         ...state,
-        data: action.payload.items,
-        pagination: action.payload.pageInfo,
-      };
+        search: action.payload.products,
+        pageInfo: action.payload.pageInfo
+      } 
+    }
+    case 'SEARCH_GET_NEXT': {
+      return {
+        ...state,
+        search:[ 
+          ...state.data,
+          ...action.payload.products
+        ],
+        pageInfo: action.payload.pageInfo
+      } 
+    }
     default:
       return {
         ...state,

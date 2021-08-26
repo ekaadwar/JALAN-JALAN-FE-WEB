@@ -115,15 +115,17 @@ function SearchResult(props) {
                   data.airline.picture = `${URL}${data.airline.picture}`;
                 }
                 return (
-                  <CardAirLine
-                    codeBaseCountry={data.destination.base_country_code}
-                    timeLeave={data.time_leave}
-                    codeCountry={data.destination.destination_country_code}
-                    timeArrive={data.time_arrive}
-                    airline={data.airline.name}
-                    transit={data.transit}
-                    airlinePicture={data.airline.picture}
-                    id={data.id}
+
+                  <CardAirLine 
+                  codeBaseCountry={data.destination.base_country_code}
+                  timeLeave={data.time_leave}
+                  codeCountry={data.destination.destination_country_code}
+                  timeArrive={data.time_arrive}
+                  airline={data.airline.name}
+                  transit={data.transit}
+                  airlinePicture={data.airline.picture}
+                  id={data.id}
+                  price={data.price}
                   />
                 );
               })}

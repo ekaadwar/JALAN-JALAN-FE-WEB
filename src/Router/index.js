@@ -24,7 +24,6 @@ function Routes({ auth }) {
   return (
     <Router>
       {onAuth === false && <MainNavbar />}
-
       <Switch>
         <Route path="/" exact component={Explore} />
         <Route path="/login" component={Login} />

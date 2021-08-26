@@ -65,6 +65,10 @@ export const TextCity = styled(Text)`
   font-size: 16px;
   font-weight: bold;
 `;
+export const TextPrice = styled(Text)`
+  font-size: 12px;
+  font-weight: bold;
+`;
 
 export const TextDetail = styled(Text)`
   font-size: 12px;

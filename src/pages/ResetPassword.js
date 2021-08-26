@@ -19,8 +19,6 @@ import { useHistory } from "react-router";
 import Swal from "sweetalert2";
 import { toggleAuth, openNavbar } from "../redux/actions/auth";
 
-// import { FloatingLabel } from "react-bootstrap";
-
 function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -69,33 +67,24 @@ function Login(props) {
         <Col>
           <ContentWrapper>
             <MaxWidth>
-              <AuthTitle title="Login" />
+              <AuthTitle title="New Password" />
               <FormAuth onSubmit={onLogin}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Control
-                    type="email"
-                    placeholder="Username"
+                    type="pass"
+                    placeholder="New Password"
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Control
                     type="password"
-                    placeholder="Password"
+                    placeholder="Repeat New Password"
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </Form.Group>
-                <GeneralButton value="Sign In" isPrimary type="submit" />
+                <GeneralButton value="Reset" isPrimary type="submit" />
               </FormAuth>
-              <PAuth>Did you forgot your password?</PAuth>
-              <PAuth>
-                <Link to="/forgotPass">Tap here for reset</Link>
-              </PAuth>
-              <Hr />
-              <PAuth>don't have an account yet?</PAuth>
-              <PAuth>
-                <Link to="/register">Click here to Sign Up</Link>
-              </PAuth>
             </MaxWidth>
           </ContentWrapper>
         </Col>

@@ -4,6 +4,7 @@ export const Button = styled.button`
   border: 0;
   padding: 0;
   margin: 0;
+  backgound-color: #fff;
 `;
 
 export const CardDestination = styled.div`
@@ -11,6 +12,15 @@ export const CardDestination = styled.div`
   height: 250px;
   border-radius: 10px;
   display: inline-block;
+`;
+
+export const Input = styled.input`
+  padding: 10px 10px;
+  margin: 0;
+  background-color: #fff;
+  border-width: 0;
+  width: 100%;
+  border-bottom: 2px solid #d2c2ff;
 `;
 
 export const Section = styled.div`

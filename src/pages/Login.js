@@ -1,6 +1,4 @@
-
 /* eslint-disable react-hooks/exhaustive-deps */
-
 
 import React, { useState, useEffect } from "react";
 
@@ -65,8 +63,6 @@ function Login(props) {
       })
     })
   }
-
-
   return (
     <Container style={{ paddingTop: 60 }}>
       <Row>

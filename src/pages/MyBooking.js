@@ -37,15 +37,7 @@ const Parent = styled.div`
   background-color: #f5f6fa;
   min-height: 100vh;
 `;
-// const MyBookingBox = styled.div`
-//   background-color: yellow;
-//   width: 100%;
-//   height: 100px;
-//   background-color: white;
-//   box-shadow: 2px 2px 2px 2px rgba(0, 0, 250, 0.1);
-//   padding: 4px 10px 8px 10px;
-//   border-radius: 10px;
-// `;
+
 const RightBox = styled.div`
   width: 80%;
   height: 500px;

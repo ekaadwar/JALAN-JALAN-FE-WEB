@@ -5,6 +5,8 @@ import ProfileCard from "../components/ProfileCardBox";
 import { Col, Row } from "react-bootstrap";
 import { FaPlaneDeparture } from "react-icons/fa";
 import { FiChevronDown } from "react-icons/fi";
+import { getHistoryProducts } from "../redux/actions/transaction";
+import { connect } from "react-redux";
 
 import {
   Button as ButtonStyled,
@@ -29,7 +31,7 @@ const Card = styled(CardCst)`
 `;
 
 const Heading = styled.div`
-  height: 600px;
+  min-height: 600px;
   display: flex;
   padding: 50px;
 `;
@@ -40,7 +42,7 @@ const Parent = styled.div`
 
 const RightBox = styled.div`
   width: 80%;
-  height: 500px;
+  min-height: 500px;
   margin-top: 30px;
   padding-left: 50px;
 `;
@@ -56,7 +58,15 @@ const CardData = [
   },
 ];
 
-export default class MyBooking extends Component {
+class MyBooking extends Component {
+  constructor(props) {
+    super(props);
+    this.state =  {data: {}};
+  }
+  componentDidMount(){
+   const {token} = this.props.auth
+   this.props.getHistoryProducts(token)
+  }
   render() {
     return (
       <Parent>
@@ -83,20 +93,20 @@ export default class MyBooking extends Component {
                 </SectionJustify>
               </Card>
 
-              {CardData.map((v) => (
+              {this.props.transaction.history.map((data) => (
                 <Card className="shadow  mb-3">
                   <Row className="border-bottom mb-3">
                     <Col>
                       <TextLabel className="mb-3">
-                        Monday, 20 July 20 - 12:33
+                        {data.product.day}, {data.product.date}{data.product.month} {data.product.year} - {data.product.time_leave}
                       </TextLabel>
                       <Section className="mb-3">
-                        <TextCity>IDN</TextCity>
+                        <TextCity>{data.product.destination.base_country}</TextCity>
                         <FaPlaneDeparture className="mx-5" />
-                        <TextCity>JPN</TextCity>
+                        <TextCity>{data.product.destination.destination_country}</TextCity>
                       </Section>
                       <TextDetail style={{ color: "#979797" }} className="mb-3">
-                        Garuda Indonesia, AB-221
+                      {data.product.airline.name}, {data.product.code}
                       </TextDetail>
                     </Col>
                   </Row>
@@ -106,11 +116,19 @@ export default class MyBooking extends Component {
                         <TextDetail style={{ color: "#7A7A7A" }}>
                           Status
                         </TextDetail>
-                        <Button style={{ backgroundColor: `${v.colorStatus}` }}>
+                        {data.status === 0 ? 
+                            <Button style={{ backgroundColor: `#FF7F23` }}>
+                            <TextDetail style={{ color: "#fff" }}>
+                              Waiting for payment
+                            </TextDetail>
+                          </Button>
+                        :
+                          <Button style={{ backgroundColor: `#4FCF4D` }}>
                           <TextDetail style={{ color: "#fff" }}>
-                            {v.status}
+                            Payment successfully
                           </TextDetail>
                         </Button>
+                        }
                       </SectionJustify>
                     </Col>
                     <Col xs={8}>
@@ -131,3 +149,9 @@ export default class MyBooking extends Component {
     );
   }
 }
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+  transaction: state.transaction
+});
+const mapDispatchToProps = { getHistoryProducts };
+export default connect(mapStateToProps, mapDispatchToProps)(MyBooking)

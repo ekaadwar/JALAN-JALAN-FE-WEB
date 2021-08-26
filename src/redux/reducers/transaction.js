@@ -1,6 +1,7 @@
 const initialState = {
   sccMseg: '',
-  errMseg : ''
+  errMseg : '',
+  history: {},
 }
 
 const payment = (state= initialState, action) =>{
@@ -15,6 +16,12 @@ const payment = (state= initialState, action) =>{
       return{
         ...state,
         errMseg: action.payload
+      }
+    }
+    case 'GET_HISTORY_TRANSACTION' :{
+      return{
+        ...state,
+        history: action.payload
       }
     }
     default: {

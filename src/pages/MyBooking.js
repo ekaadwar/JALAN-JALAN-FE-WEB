@@ -29,7 +29,7 @@ const Card = styled(CardCst)`
 `;
 
 const Heading = styled.div`
-  height: 600px;
+  min-height: 600px;
   display: flex;
   padding: 50px;
 `;

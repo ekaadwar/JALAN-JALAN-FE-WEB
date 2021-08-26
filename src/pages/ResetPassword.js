@@ -1,7 +1,3 @@
-
-/* eslint-disable react-hooks/exhaustive-deps */
-
-
 import React, { useState, useEffect } from "react";
 
 import { Container, Form, Row, Col } from "react-bootstrap";
@@ -22,8 +18,6 @@ import { useHistory } from "react-router";
 
 import Swal from "sweetalert2";
 import { toggleAuth, openNavbar } from "../redux/actions/auth";
-
-// import { FloatingLabel } from "react-bootstrap";
 
 function Login(props) {
   const [email, setEmail] = useState("");
@@ -62,24 +56,10 @@ function Login(props) {
           icon: "error",
           title: "Login Failed",
           showConfirmButton: false,
-
-          timer: 1500
-        })
-        setTimeout(() => {
-          history.push('/')
-        }, 1500);
-      }
-    }).catch(()=>{  
-      Swal.fire({
-        position: 'top-end',
-        icon: 'error',
-        title: 'Login Failed',
-        showConfirmButton: false,
-        timer: 1500
-      })
-    })
-  }
-
+          timer: 1500,
+        });
+      });
+  };
 
   return (
     <Container style={{ paddingTop: 60 }}>
@@ -87,33 +67,24 @@ function Login(props) {
         <Col>
           <ContentWrapper>
             <MaxWidth>
-              <AuthTitle title="Login" />
+              <AuthTitle title="New Password" />
               <FormAuth onSubmit={onLogin}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Control
-                    type="email"
-                    placeholder="Username"
+                    type="pass"
+                    placeholder="New Password"
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Control
                     type="password"
-                    placeholder="Password"
+                    placeholder="Repeat New Password"
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </Form.Group>
-                <GeneralButton value="Sign In" isPrimary type="submit" />
+                <GeneralButton value="Reset" isPrimary type="submit" />
               </FormAuth>
-              <PAuth>Did you forgot your password?</PAuth>
-              <PAuth>
-                <Link to="/forgotPass">Tap here for reset</Link>
-              </PAuth>
-              <Hr />
-              <PAuth>don't have an account yet?</PAuth>
-              <PAuth>
-                <Link to="/register">Click here to Sign Up</Link>
-              </PAuth>
             </MaxWidth>
           </ContentWrapper>
         </Col>

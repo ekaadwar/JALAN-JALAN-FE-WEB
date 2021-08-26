@@ -1,10 +1,8 @@
-
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 
 import { Row, Col, Container } from "react-bootstrap";
-
 
 import { connect } from "react-redux";
 
@@ -32,25 +30,29 @@ import { searchProducts } from "../redux/actions/product";
 import CardAirLine from "../components/CardAirLine";
 
 function SearchResult(props) {
-
-  const [search, setSearch] = useState("")
-  const [page, setPage] = useState(1)
-  const [filterAirline, setFilterAirline] = useState("")
-  const [filterPrice1, setFilterPrice1] = useState(100000)
-  const [filterPrice2, setFilterPrice2] = useState(1000000)
-  const [filterDeparture1, setFilterDeparture1] = useState("")
-  const [filterArrive1, setFilterArrive1] = useState("")
-  const [filterTransit1, setFilterTransit] = useState("")
+  const [search, setSearch] = useState("");
+  const [page, setPage] = useState(1);
+  const [filterAirline, setFilterAirline] = useState("");
+  const [filterPrice1, setFilterPrice1] = useState(100000);
+  const [filterPrice2, setFilterPrice2] = useState(1000000);
+  const [filterDeparture1, setFilterDeparture1] = useState("");
+  const [filterArrive1, setFilterArrive1] = useState("");
+  const [filterTransit1, setFilterTransit] = useState("");
   const { REACT_APP_BACKEND_URL: URL } = process.env;
 
-
   useEffect(() => {
-    props.openNavbar()
-    props.searchProducts(search, page, filterAirline, filterPrice1, filterPrice2, filterDeparture1, filterArrive1, filterTransit1,)
-  },[])
-
-
-
+    props.openNavbar();
+    props.searchProducts(
+      search,
+      page,
+      filterAirline,
+      filterPrice1,
+      filterPrice2,
+      filterDeparture1,
+      filterArrive1,
+      filterTransit1
+    );
+  }, []);
 
   return (
     <>
@@ -106,23 +108,25 @@ function SearchResult(props) {
             <Col md={9}>
               {/* <CardAirList/> */}
               {props.product.search.map((data) => {
-                  if(data.airline.picture !== null && !data.airline.picture.startsWith('http')){
-                    data.airline.picture=`${URL}${data.airline.picture}`
-                  }
+                if (
+                  data.airline.picture !== null &&
+                  !data.airline.picture.startsWith("http")
+                ) {
+                  data.airline.picture = `${URL}${data.airline.picture}`;
+                }
                 return (
-                  <CardAirLine 
-                  codeBaseCountry={data.destination.base_country_code}
-                  timeLeave={data.time_leave}
-                  codeCountry={data.destination.destination_country_code}
-                  timeArrive={data.time_arrive}
-                  airline={data.airline.name}
-                  transit={data.transit}
-                  airlinePicture={data.airline.picture}
-                  id={data.id}
+                  <CardAirLine
+                    codeBaseCountry={data.destination.base_country_code}
+                    timeLeave={data.time_leave}
+                    codeCountry={data.destination.destination_country_code}
+                    timeArrive={data.time_arrive}
+                    airline={data.airline.name}
+                    transit={data.transit}
+                    airlinePicture={data.airline.picture}
+                    id={data.id}
                   />
-                )
+                );
               })}
-
             </Col>
           </Row>
         </Container>
@@ -131,12 +135,9 @@ function SearchResult(props) {
   );
 }
 
-
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   auth: state.auth,
-  product: state.product
-})
-const mapDispatchToProps = {openNavbar, searchProducts}
-export default connect(mapStateToProps, mapDispatchToProps)(SearchResult)
-
-
+  product: state.product,
+});
+const mapDispatchToProps = { openNavbar, searchProducts };
+export default connect(mapStateToProps, mapDispatchToProps)(SearchResult);

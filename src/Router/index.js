@@ -32,7 +32,7 @@ function Routes({ auth }) {
           <SearchResult />
         </PrivateRoute>
         {/* <Route path="/explore" component={Explore} /> */}
-        <Route path="/flightDetail" component={FlightDetail} />
+        <Route path="/flightDetail/:id" component={FlightDetail} />
         <Route path="/bookingDetail" component={BookingDetail} />
       </Switch>
       <Footer />

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 
 import React, { useState, useEffect } from "react";
 
@@ -11,7 +12,7 @@ import {
   Hr,
 } from "../components/AuthStyles";
 
-import AuthHeader from "../components/AuthHeader";
+// import AuthHeader from "../components/AuthHeader";
 import GeneralButton from "../components/GeneralButton";
 import AuthTitle from "../components/AuthTitle";
 import { authLogin } from "../redux/actions/auth";
@@ -50,7 +51,7 @@ function Login(props) {
           timer: 1500
         })
         setTimeout(() => {
-          history.push('/searchResult')
+          history.push('/')
         }, 1500);
       }
     }).catch(()=>{  

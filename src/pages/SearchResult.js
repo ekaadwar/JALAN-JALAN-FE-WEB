@@ -1,8 +1,15 @@
+
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import React, {useState, useEffect} from "react";
 
 import { Row, Col, Container } from "react-bootstrap";
+
+
+import { connect } from "react-redux";
+
+import { FiChevronDown } from "react-icons/fi";
+
 import MainNavbar from "../components/MainNavbar";
 import Footer from "../components/Footer";
 import CardFilter from "../components/CardFilter";
@@ -19,12 +26,13 @@ import {
 import { TopSectionStyles } from "../components/GeneralStyles";
 
 import { BsArrowLeftRight, BsDot } from "react-icons/bs";
-import { connect } from "react-redux";
+
 import { openNavbar } from "../redux/actions/auth";
 import { searchProducts } from "../redux/actions/product";
 import CardAirLine from "../components/CardAirLine";
 
 function SearchResult(props) {
+
   const [search, setSearch] = useState("")
   const [page, setPage] = useState(1)
   const [filterAirline, setFilterAirline] = useState("")
@@ -40,6 +48,7 @@ function SearchResult(props) {
     props.openNavbar()
     props.searchProducts(search, page, filterAirline, filterPrice1, filterPrice2, filterDeparture1, filterArrive1, filterTransit1,)
   },[])
+
 
 
 
@@ -123,10 +132,12 @@ function SearchResult(props) {
   );
 }
 
+
 const mapStateToProps = state => ({
   auth: state.auth,
   product: state.product
 })
 const mapDispatchToProps = {openNavbar, searchProducts}
 export default connect(mapStateToProps, mapDispatchToProps)(SearchResult)
+
 

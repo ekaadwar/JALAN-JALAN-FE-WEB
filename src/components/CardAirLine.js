@@ -27,6 +27,7 @@ import { RiSuitcase3Fill } from "react-icons/ri";
 function CardAirLine(props) {
   return (
     <>
+
           <Link to={`/flightDetail/${props.id}`} style={LinkStyle} key={props.id}>
           <CardCst className="px-md-3 pt-3 my-3" style={{ color: "#979797" }}>
             <Row>
@@ -50,6 +51,7 @@ function CardAirLine(props) {
                      {props.codeBaseCountry}
                     </TextCity>
                     <TextDetail>{props.timeLeave}</TextDetail>
+
                   </div>
                   <FaPlaneDeparture className="mx-5" />
                   <div>

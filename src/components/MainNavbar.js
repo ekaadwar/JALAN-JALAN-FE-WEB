@@ -49,7 +49,7 @@ function MainNavbar({ auth, authLogOut }) {
               </Link>
             </Nav.Link>
             <Nav.Link>
-              <Link style={LinkStyle} to="bookingDetail">
+              <Link style={LinkStyle} to="/myBooking">
                 My Booking
               </Link>
             </Nav.Link>

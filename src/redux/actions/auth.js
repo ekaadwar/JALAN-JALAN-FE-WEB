@@ -43,7 +43,7 @@ export const authRegister = (name, email, password) => {
     form.append('email', email)
     form.append('password', password)
     try{
-      const {data} = await http().post(`${URL}/auth`, form.toString())
+      const {data} = await http().post(`${URL}/auth/register`, form.toString())
       dispatch({
         type: 'AUTH_REGISTER',
         payload: data.message

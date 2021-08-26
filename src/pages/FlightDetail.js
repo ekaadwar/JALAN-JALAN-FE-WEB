@@ -1,6 +1,4 @@
 import React from "react";
-import MainNavbar from "../components/MainNavbar";
-import Footer from "../components/Footer";
 import GeneralButton from "../components/GeneralButton";
 import styled from "styled-components";
 

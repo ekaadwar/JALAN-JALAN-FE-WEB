@@ -1,5 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 import React, {useState, useEffect} from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import { searchProducts } from "../redux/actions/product";
 
 import Footer from "../components/Footer";
 // import MainNavbar from "../components/MainNavbar";
@@ -108,9 +111,18 @@ const InputSearch = styled(Button)`
 
 
 function Explore(props) {
+  const [search, setSearch] = useState("")
+  const [page, setPage] = useState(1)
+  const [filterAirline, setFilterAirline] = useState("")
+  const [filterPrice1, setFilterPrice1] = useState(100000)
+  const [filterPrice2, setFilterPrice2] = useState(1000000)
+  const [filterDeparture1, setFilterDeparture1] = useState("")
+  const [filterArrive1, setFilterArrive1] = useState("")
+  const [filterTransit1, setFilterTransit] = useState("")
 
   useEffect(() => {
     props.openNavbar()
+    props.searchProducts(search, page, filterAirline, filterPrice1, filterPrice2, filterDeparture1, filterArrive1, filterTransit1,)
   },[])
   return (
     <>
@@ -229,5 +241,5 @@ function Explore(props) {
 const mapStateToProps = state => ({
   auth: state.auth
 })
-const mapDispatchToProps = {openNavbar}
+const mapDispatchToProps = {openNavbar, searchProducts}
 export default connect(mapStateToProps, mapDispatchToProps)(Explore)

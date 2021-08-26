@@ -21,5 +21,17 @@ export const createTransaction = (productId, token) => {
         payload: err.response.data.message,
       });
     }
-  };
-};
+
+  }
+}
+
+export const getHistoryProducts = (token) => {
+  return async (dispatch) => {
+    const {data} = await http(token).get(`${URL}/transaction/user-transaction`)
+    dispatch({
+      type: 'GET_HISTORY_TRANSACTION',
+      payload: data.results
+    })
+  }
+}
+

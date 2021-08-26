@@ -68,7 +68,7 @@ function FlightDetail(props) {
     
   const onBooking = () => {
     props.createTransaction(id, token).then(()=>{
-      if(props.transaction.sccMseg === "create transaction successfully!"){
+      if(props.transaction.sccMseg === "create transaction successfully!" && props.transaction.errMseg === ""){
         Swal.fire({
           position: 'top-end',
           icon: 'success',
@@ -80,11 +80,11 @@ function FlightDetail(props) {
           history.push('/mybooking')
         }, 1500);
       }
-    }).catch(()=>{  
+    }).catch(()=>{
       Swal.fire({
         position: 'top-end',
         icon: 'error',
-        title: 'Booking Failed',
+        title: `${props.transaction.errMseg}`,
         showConfirmButton: false,
         timer: 1500
       })

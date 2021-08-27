@@ -98,12 +98,13 @@ const CrediteCard = styled.div`
   box-shadow: 0px 7px 7px 7px rgba(13, 219, 137, 0.2);
 `;
 
-export default function ProfileCardBox() {
+export default function ProfileCardBox(props) {
+  const { REACT_APP_BACKEND_URL: URL } = process.env;
   return (
     <ProfileCard className="shadow p-3 mb-5 ">
       <ProfileContent>
         <Box>
-          <Profileimg src={image} alt="" />
+          <Profileimg src={props.picture} alt="" />
           <Wrapper>
             <label for="upload-photo" className="">
               <SelectPict>
@@ -111,8 +112,8 @@ export default function ProfileCardBox() {
               </SelectPict>
             </label>
             <Picker type="file" name="photo" id="upload-photo" />
-            <Name>Mike Kowalski</Name>
-            <Place>Bandung,Indonesia</Place>
+            <Name>{props.name}</Name>
+            <Place>{props.city},Indonesia</Place>
           </Wrapper>
         </Box>
       </ProfileContent>
@@ -133,11 +134,11 @@ export default function ProfileCardBox() {
               letterSpacing: 4,
             }}
           >
-            12345678
+            {props.number}
           </div>
           <Box2>
             <Credite style={{ color: "white" }}>Card</Credite>
-            <Credite style={{ color: "white" }}>Rp.200.000</Credite>
+            <Credite style={{ color: "white" }}>{props.balance}</Credite>
           </Box2>
         </CrediteCard>
       </Box>

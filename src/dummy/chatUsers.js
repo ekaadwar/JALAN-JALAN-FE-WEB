@@ -10,7 +10,7 @@ export const chats = [
   {
     picture: andrew,
     name: "Andrew",
-    message: "Me: Bro, just fuck off",
+    message: "Me: hello Bro!!!",
     time: "8:30",
     status: BiCheckDouble,
   },

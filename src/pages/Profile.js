@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import ProfileCard from "../components/ProfileCardBox";
 import GeneralButton from "../components/GeneralButton";
 
-import { getUserById } from "../redux/actions/user";
+import { getProfile } from "../redux/actions/profile";
 
 import { Col, Row } from "react-bootstrap";
 import { FiChevronRight } from "react-icons/fi";
@@ -171,6 +171,6 @@ const mapStateToProps = (state) => ({
   user: state.user,
 });
 
-const mapDispatchToProps = { getUserById };
+const mapDispatchToProps = { getProfile };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);

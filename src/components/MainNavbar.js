@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 import {
@@ -51,7 +51,7 @@ const ImageWrapper = styled.div`
   background-color : yellow
 `;
 
-function MainNavbar({ auth, authLogOut }) {
+function MainNavbar({ auth, authLogOut}) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -60,7 +60,7 @@ function MainNavbar({ auth, authLogOut }) {
     {
       picture: andrew,
       name: "Andrew",
-      message: "Me: Bro, just fuck off",
+      message: "Me: Bro!!!",
       time: "8:30",
       status: BiCheckDouble,
     },
@@ -95,6 +95,7 @@ function MainNavbar({ auth, authLogOut }) {
   ];
 
   console.log(senderList);
+
 
   return (
     <>

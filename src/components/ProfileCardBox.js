@@ -5,6 +5,9 @@ import { AiFillStar, AiFillSetting } from "react-icons/ai";
 import { FiLogOut } from "react-icons/fi";
 import styled from "styled-components";
 
+import { connect } from "react-redux";
+import { authLogOut } from "../redux/actions/auth";
+
 const Box = styled.div`
   width: 100%;
   display: flex;
@@ -98,8 +101,10 @@ const CrediteCard = styled.div`
   box-shadow: 0px 7px 7px 7px rgba(13, 219, 137, 0.2);
 `;
 
+
 export default function ProfileCardBox(props) {
   const { REACT_APP_BACKEND_URL: URL } = process.env;
+
   return (
     <ProfileCard className="shadow p-3 mb-5 ">
       <ProfileContent>
@@ -205,9 +210,11 @@ export default function ProfileCardBox(props) {
               alignItems: "center",
               width: "100%",
               marginBottom: 10,
+              cursor: "pointer",
             }}
+            onClick={authLogOut}
           >
-            <div style={{ width: 60 }}>
+            <div style={{ width: 60, cursor: "pointer" }}>
               <FiLogOut color="#F24545" size={20} />
             </div>
             <div style={{ width: 60 }}>
@@ -228,3 +235,10 @@ export default function ProfileCardBox(props) {
     </ProfileCard>
   );
 }
+
+// const mapStateToProps = (state) => ({
+//   auth: state.auth,
+//   chats: state.auth,
+// });
+// const mapDispatchToProps = { authLogOut };
+// export default connect(mapStateToProps, mapDispatchToProps)(ProfileCardBox);

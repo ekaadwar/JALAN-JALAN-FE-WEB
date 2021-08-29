@@ -1,20 +1,20 @@
 const initialState = {
-  data: [],
-  msg: "",
+  data: {},
+  errMsg: "",
 };
 
 const user = (state = initialState, action) => {
   switch (action.type) {
-    case "GET_USER_BY_ID": {
+    case "GET_PROFILE": {
       return {
         ...state,
         data: action.payload,
       };
     }
-    case "GET_USER_BY_ID_FAILED": {
+    case "GET_PROFILE_FAILED": {
       return {
         ...state,
-        msg: action.payload,
+        errMsg: action.payload,
       };
     }
     default: {

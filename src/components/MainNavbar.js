@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 import {
@@ -85,9 +85,10 @@ const ImageWrapper = styled.div`
   background-color : yellow
 `;
 
-function MainNavbar({ auth, authLogOut }) {
+function MainNavbar({ auth, authLogOut}) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
+
   const handleShow = () => {
     handleCloseChat();
     setShow(true);
@@ -116,6 +117,10 @@ function MainNavbar({ auth, authLogOut }) {
     setMessage("");
     setChatData(chat);
   };
+
+  
+
+
 
   return (
     <>

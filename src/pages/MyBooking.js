@@ -6,6 +6,7 @@ import { Col, Row } from "react-bootstrap";
 import { FaPlaneDeparture } from "react-icons/fa";
 import { FiChevronDown } from "react-icons/fi";
 import { getHistoryProducts } from "../redux/actions/transaction";
+import { getProfile } from "../redux/actions/profile";
 import { connect } from "react-redux";
 
 import {
@@ -58,14 +59,22 @@ const CardData = [
   },
 ];
 
+
 class MyBooking extends Component {
   constructor(props) {
     super(props);
     this.state =  {data: {}};
   }
-  componentDidMount(){
+  async componentDidMount(){
    const {token} = this.props.auth
-   this.props.getHistoryProducts(token)
+   const { REACT_APP_BACKEND_URL: URL } = process.env;
+   await this.props.getHistoryProducts(token)
+   await this.props.getProfile(token).then(()=>{
+    if(this.props.profile.data.user.picture !== null && !this.props.profile.data.user.picture.startsWith('http')){
+      this.props.profile.data.user.picture=`${URL}${this.props.profile.data.user.picture}`
+    }
+   })
+   console.log('data nih',this.props.profile.data.user.picture);
   }
   render() {
     return (
@@ -80,7 +89,12 @@ class MyBooking extends Component {
             }}
           >
             <div>
-              <ProfileCard />
+              <ProfileCard 
+              name={this.props.profile.data?.user?.name} 
+              city={this.props.profile.data?.user?.city} 
+              picture={this.props.profile.data?.user?.picture}
+              number={this.props.profile.data?.number} 
+              />
             </div>
             <RightBox>
               <Card className="shadow mb-3">
@@ -151,7 +165,8 @@ class MyBooking extends Component {
 }
 const mapStateToProps = (state) => ({
   auth: state.auth,
-  transaction: state.transaction
+  transaction: state.transaction,
+  profile: state.profile,
 });
-const mapDispatchToProps = { getHistoryProducts };
+const mapDispatchToProps = { getHistoryProducts, getProfile };
 export default connect(mapStateToProps, mapDispatchToProps)(MyBooking)

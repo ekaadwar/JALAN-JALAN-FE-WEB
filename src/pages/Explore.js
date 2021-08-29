@@ -36,6 +36,7 @@ import { connect } from "react-redux";
 import { openNavbar } from "../redux/actions/auth";
 import { getDetails } from "../redux/actions/product";
 import { getHistoryProducts } from "../redux/actions/transaction";
+import { getProfile } from "../redux/actions/profile";
 
 const BgTopDestination = styled(CardCst)`
   background-color: #0ddb89;
@@ -128,6 +129,7 @@ function Explore(props) {
     props.searchProducts(search, page, filterAirline, filterPrice1, filterPrice2, filterDeparture1, filterArrive1, filterTransit1,)
     props.getDetails(1)
     props.getHistoryProducts(token)
+    props.getProfile(token)
   },[])
   return (
     <>
@@ -246,5 +248,5 @@ function Explore(props) {
 const mapStateToProps = state => ({
   auth: state.auth
 })
-const mapDispatchToProps = {openNavbar, searchProducts, getDetails, getHistoryProducts}
+const mapDispatchToProps = {openNavbar, searchProducts, getDetails, getHistoryProducts, getProfile}
 export default connect(mapStateToProps, mapDispatchToProps)(Explore)

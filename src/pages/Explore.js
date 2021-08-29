@@ -35,6 +35,7 @@ import spainView from "../assets/img/general/spainView.png";
 import { connect } from "react-redux";
 import { openNavbar } from "../redux/actions/auth";
 import { getDetails } from "../redux/actions/product";
+import { getHistoryProducts } from "../redux/actions/transaction";
 
 const BgTopDestination = styled(CardCst)`
   background-color: #0ddb89;
@@ -120,11 +121,13 @@ function Explore(props) {
   const [filterDeparture1, setFilterDeparture1] = useState("")
   const [filterArrive1, setFilterArrive1] = useState("")
   const [filterTransit1, setFilterTransit] = useState("")
+  const {token} = props.auth
 
   useEffect(() => {
     props.openNavbar()
     props.searchProducts(search, page, filterAirline, filterPrice1, filterPrice2, filterDeparture1, filterArrive1, filterTransit1,)
     props.getDetails(1)
+    props.getHistoryProducts(token)
   },[])
   return (
     <>
@@ -243,5 +246,5 @@ function Explore(props) {
 const mapStateToProps = state => ({
   auth: state.auth
 })
-const mapDispatchToProps = {openNavbar, searchProducts, getDetails}
+const mapDispatchToProps = {openNavbar, searchProducts, getDetails, getHistoryProducts}
 export default connect(mapStateToProps, mapDispatchToProps)(Explore)

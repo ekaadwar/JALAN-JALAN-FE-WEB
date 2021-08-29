@@ -71,11 +71,14 @@ function FlightDetail(props) {
     props
       .createTransaction(id, token)
       .then(() => {
-        if (props.transaction.sccMseg === "create transaction successfully!") {
+        if (
+          props.transaction.sccMseg === "create transaction successfully!" &&
+          props.transaction.errMseg === ""
+        ) {
           Swal.fire({
             position: "top-end",
-            icon: "success",
-            title: "Booking Successfully",
+            icon: "error",
+            title: "Booking Failed",
             showConfirmButton: false,
             timer: 1500,
           });
@@ -88,7 +91,7 @@ function FlightDetail(props) {
         Swal.fire({
           position: "top-end",
           icon: "error",
-          title: "Booking Failed",
+          title: `${props.transaction.errMseg}`,
           showConfirmButton: false,
           timer: 1500,
         });

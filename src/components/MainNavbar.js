@@ -29,12 +29,22 @@ import { authLogOut } from "../redux/actions/auth";
 
 import { FiMail } from "react-icons/fi";
 import { BiCheckDouble } from "react-icons/bi";
-
-import { FaChevronLeft } from "react-icons/fa";
+import { FaCamera, FaChevronLeft } from "react-icons/fa";
 
 import { test } from "../dummy/chatDialog";
 import { chats } from "../dummy/chatUsers";
-console.log(test);
+
+const ButtonWrapper = styled.div`
+  position: absolute;
+  margin-top: -33px;
+  margin-left: 360px;
+  cursor: pointer;
+  color: #898989;
+  display: inline-block;
+  & :hover {
+    color: #0ddb89;
+  }
+`;
 
 const ChatWrapper = styled.div`
   padding: 20px;
@@ -253,16 +263,25 @@ function MainNavbar({ auth, authLogOut }) {
               </DialogWrapper>
               <Form onSubmit={sendMessage}>
                 <InputGroup className="mb-3">
-                  <FormControl
-                    placeholder="Your text ..."
-                    aria-label="Your text ..."
-                    aria-describedby="basic-addon2"
-                    value={message}
-                    onChange={(event) => setMessage(event.target.value)}
-                  />
-                  <Button type="submit" variant="success" id="button-addon2">
-                    Send
-                  </Button>
+                  <div className="position-relative w-100">
+                    <FormControl
+                      placeholder="Your text ..."
+                      aria-label="Your text ..."
+                      aria-describedby="basic-addon2"
+                      value={message}
+                      onChange={(event) => setMessage(event.target.value)}
+                      style={{ paddingRight: 50 }}
+                    />
+                    <Button
+                      type="submit"
+                      variant="success"
+                      id="button-addon2"
+                      className="d-none"
+                    />
+                    <ButtonWrapper>
+                      <FaCamera size={24} />
+                    </ButtonWrapper>
+                  </div>
                 </InputGroup>
               </Form>
             </Modal.Body>
